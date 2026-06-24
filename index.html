@@ -401,10 +401,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   overflow: hidden;
 }
 .prompt-block::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 4px;
+  display: none;
 }
 .prompt-label {
   font-size: 0.85rem;
@@ -441,11 +438,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
 
 /* 레벨별 프롬프트 색상 */
 .level1-prompt { background: rgba(0,212,170,0.06); }
-.level1-prompt::before { background: var(--level1); }
 .level2-prompt { background: rgba(255,210,63,0.08); }
-.level2-prompt::before { background: var(--level2); }
 .level3-prompt { background: rgba(255,51,102,0.06); }
-.level3-prompt::before { background: var(--level3); }
 
 /* 레벨별 카드 아이콘 배경 */
 .level1-icon { background: rgba(0,212,170,0.1); }
@@ -739,7 +733,6 @@ details[open] .card-chevron { transform: rotate(180deg); }
   line-height: 1.7;
 }
 .design-prompt {
-  border-left-color: var(--primary) !important;
   background: rgba(255,107,53,0.04) !important;
 }
 
@@ -1550,10 +1543,12 @@ details[open].practice-card:hover { transform: none; }
             <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
             <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
             <div class="prompt-text">Google Apps Script 웹앱으로 학급 투표 시스템을 만들어줘.
-투표 제목과 선택지를 코드 안에 설정할 수 있게 하고,
+투표 제목은 "점심시간 희망 활동"으로 하고,
+선택지는 "축구", "농구", "배드민턴", "자유시간" 4개로 해줘.
 학생이 선택지를 고르고 투표 버튼을 누르면 구글 스프레드시트에 저장되게 해줘.
 투표 결과는 막대 차트로 실시간 표시해줘.
 같은 사람이 두 번 투표하면 "이미 투표했습니다" 메시지가 뜨게 해줘.
+필요한 시트는 코드가 자동으로 만들게 해줘.
 Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
           </div>
           <ol class="steps">
@@ -1583,8 +1578,9 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
 학년, 반, 번호, 이름을 입력하고,
 종목(50m 달리기, 앉아윗몸앞으로굽히기, 왕복오래달리기 등)을 선택한 뒤
 기록을 입력하면 PAPS 기준에 따라 1~5등급을 자동으로 보여줘.
-입력한 데이터는 구글 스프레드시트에 저장되고,
+입력한 데이터는 구글 스프레드시트에 저장해줘.
 학년/반별로 기록을 조회할 수 있는 화면도 만들어줘.
+필요한 시트와 헤더(열 제목)는 코드가 자동으로 만들게 해줘.
 Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
           </div>
           <ol class="steps">
@@ -1621,6 +1617,7 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
 구글 스프레드시트에 자동 저장되게 해줘.
 이미 예약된 시간은 "예약완료"로 표시하고 선택할 수 없게 해줘.
 예약이 완료되면 예약 내용 확인 메시지를 보여줘.
+필요한 시트와 헤더는 코드가 자동으로 만들게 해줘.
 Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
           </div>
           <ol class="steps">
@@ -1647,7 +1644,7 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
             <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
             <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
             <div class="prompt-text">Google Apps Script 웹앱으로 모둠 편성기를 만들어줘.
-구글 스프레드시트 첫 번째 시트에 학생 명단(이름, 성별)이 있어.
+"학생명단" 시트에 학생 이름과 성별이 있어. 시트가 없으면 자동으로 만들고 예시 데이터도 넣어줘.
 웹앱에서 모둠 수(2~8모둠)를 선택하고 "편성" 버튼을 누르면
 랜덤으로 모둠을 나눠줘.
 성별 균등 배분 옵션도 넣어줘.
@@ -1683,8 +1680,8 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
             <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
             <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
             <div class="prompt-text">Google Apps Script 웹앱으로 교실 자리배치 앱을 만들어줘.
+"학생명단" 시트에서 학생 이름을 불러와. 시트가 없으면 자동으로 만들고 예시 학생 30명을 넣어줘.
 교실 레이아웃을 가로 6줄, 세로 5줄로 설정하고,
-구글 스프레드시트에서 학생 이름을 불러와서
 자리에 드래그 앤 드롭으로 배치할 수 있게 해줘.
 "랜덤 배치" 버튼을 누르면 자동으로 섞이게 해줘.
 두 학생 자리를 클릭해서 바꾸는 기능도 넣어줘.
@@ -1798,7 +1795,8 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
             <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
             <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
             <div class="prompt-text">Google Apps Script 웹앱으로 학교 축제 부스 안내 페이지를 만들어줘.
-구글 스프레드시트에 부스 정보(부스 이름, 담당 반, 설명, 위치, 카테고리)가 있어.
+"부스목록" 시트에 부스 정보(부스 이름, 담당 반, 설명, 위치, 카테고리)가 있어.
+시트가 없으면 자동으로 만들고 예시 부스 10개도 넣어줘.
 이 데이터를 불러와서 카드형으로 보여주고,
 카테고리별(먹거리/체험/공연/전시) 필터 버튼과 검색 기능을 넣어줘.
 Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
@@ -1827,10 +1825,11 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
             <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
             <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
             <div class="prompt-text">Google Apps Script 웹앱으로 학급 포트폴리오 페이지를 만들어줘.
-구글 스프레드시트에 활동 정보(날짜, 활동명, 설명, 사진URL)가 있어.
+"활동기록" 시트에 활동 정보(날짜, 활동명, 설명, 사진URL)가 있어.
+시트가 없으면 자동으로 만들고 예시 활동 5개도 넣어줘.
 이 데이터를 불러와서 월별로 분류하고 카드형 갤러리로 보여줘.
 사진을 클릭하면 크게 볼 수 있고,
-위에서 아래로 시간순으로 흐르는 타임라인 형태로 만들어줘.
+위에서 아래로 시간순으로 흐르는 형태로 만들어줘.
 Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
           </div>
           <ol class="steps">
@@ -1869,6 +1868,7 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
 4. 대회 일정 — 대회 일정을 캘린더 형태로 보기
 선생님 모드(관리)와 학생 모드(조회)를 분리해줘.
 모든 데이터는 구글 스프레드시트에 저장해줘.
+필요한 시트(종목신청, 출석, 대회일정 등)는 코드가 자동으로 만들게 해줘.
 Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
           </div>
           <ol class="steps">
