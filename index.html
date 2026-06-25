@@ -501,6 +501,14 @@ details[open] .card-chevron { transform: rotate(180deg); }
   font-weight: 700;
   color: var(--ink2);
 }
+.steps-lead {
+  margin: 14px 0 0;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.steps-lead + .steps {
+  margin-top: 8px;
+}
 
 .customize-box {
   background: var(--bg2);
@@ -1377,15 +1385,22 @@ details[open].practice-card:hover { transform: none; }
         <div class="start-num">4</div>
         <div class="start-content">
           <h3>코드 저장하는 법</h3>
+          <p class="steps-lead"><strong>방법 A. 다운로드 버튼 (가장 쉬움 &#x2728;)</strong></p>
           <ol class="steps">
-            <li>클로드가 코드를 보여주면 오른쪽 위 <strong>복사</strong> 버튼 클릭</li>
+            <li>클로드가 코드를 만들면 화면 오른쪽에 <strong>미리보기 창</strong>이 떠요</li>
+            <li>그 창의 <strong>다운로드 버튼(&#x2193;)</strong> 클릭</li>
+            <li>파일 이름을 <strong>index.html</strong> 로 저장하면 끝! 브라우저로 바로 열려요</li>
+          </ol>
+          <p class="steps-lead"><strong>방법 B. 복사 버튼만 보일 때</strong></p>
+          <ol class="steps">
+            <li>코드 박스 오른쪽 위 <strong>복사</strong> 버튼 클릭</li>
             <li>컴퓨터에서 <strong>메모장</strong>(Windows) 또는 <strong>텍스트 편집기</strong>(Mac) 열기</li>
             <li>복사한 코드 <strong>붙여넣기</strong> (Ctrl+V)</li>
             <li><strong>다른 이름으로 저장</strong> → 파일 이름을 <strong>index.html</strong> 로 입력</li>
-            <li>파일 형식(인코딩)을 <strong>모든 파일</strong>로 변경 후 저장</li>
+            <li>파일 형식을 <strong>모든 파일(*.*)</strong>로 변경 후 저장</li>
             <li>저장된 파일을 <strong>더블클릭</strong>하면 브라우저에서 바로 열림!</li>
           </ol>
-          <div class="start-tip">GAS 웹앱(Level 2)은 파일 저장이 필요 없어요. Apps Script에 바로 붙여넣기!</div>
+          <div class="start-tip">대부분은 <strong>방법 A</strong>면 충분해요. 미리보기 창에 다운로드 버튼이 안 보일 때만 방법 B를 쓰세요. GAS 웹앱(Level 2)은 파일 저장이 필요 없어요. Apps Script에 바로 붙여넣기!</div>
         </div>
       </div>
     </div>
@@ -3253,7 +3268,7 @@ C안: 컬러풀하고 활기찬 느낌
 
       <details class="faq-item">
         <summary>무료로 얼마나 쓸 수 있나요?</summary>
-        <div class="faq-answer">claude.ai 무료 플랜에서도 실습하기에 충분한 양을 사용할 수 있어요. 하루에 대화 횟수 제한이 있는데, 실습 시간 내에는 넉넉합니다. 만약 제한에 걸리면 잠시 후 다시 시도하세요.</div>
+        <div class="faq-answer">claude.ai 무료 플랜에서도 실습하기에 충분한 양을 사용할 수 있어요. 일정 시간마다 메시지 한도가 정해져 있는데, 실습 시간 내에는 넉넉합니다. 만약 한도에 걸리면 잠시 후 다시 시도하세요.</div>
       </details>
 
       <details class="faq-item">
