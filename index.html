@@ -441,7 +441,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
   line-height: 1.8;
   color: var(--ink);
   white-space: pre-wrap;
-  word-break: break-all;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .copy-btn {
   position: absolute;
@@ -585,7 +586,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
   line-height: 1.8;
   color: #a8e6cf;
   white-space: pre-wrap;
-  word-break: break-all;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
   overflow-x: auto;
 }
 
@@ -1261,6 +1263,21 @@ details[open] .card-chevron { transform: rotate(180deg); }
 /* details 열린 상태 호버 제어 */
 details[open].practice-card { transform: none; }
 details[open].practice-card:hover { transform: none; }
+
+/* ── 모바일 터치 영역 최적화 (권장 44px) ── */
+@media (max-width: 768px) {
+  .copy-btn {
+    top: 10px; right: 10px;
+    padding: 9px 16px;
+    font-size: 0.85rem;
+  }
+  .terminal-copy { padding: 8px 16px; font-size: 0.8rem; }
+  .cat-btn { padding: 11px 18px; }
+  .ref-tag { padding: 10px 18px; }
+  .tab-label { padding: 13px 24px; }
+  /* 프롬프트 블록 우측 상단 복사버튼과 텍스트 겹침 방지 */
+  .prompt-label { padding-right: 64px; }
+}
 </style>
 </head>
 <body>
