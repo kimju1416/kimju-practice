@@ -465,6 +465,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
 .level1-prompt { background: rgba(0,212,170,0.06); }
 .level2-prompt { background: rgba(255,210,63,0.08); }
 .level3-prompt { background: rgba(255,51,102,0.06); }
+.level4-prompt { background: rgba(123,47,247,0.06); }
 
 /* 레벨별 카드 아이콘 배경 */
 .level1-icon { background: rgba(0,212,170,0.1); }
@@ -2022,11 +2023,11 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
         </div>
       </div>
 
-      <div class="next-group-title en">나만의 스킬 만들기</div>
+      <div class="next-group-title en">프로젝트로 작업환경 만들기</div>
       <div class="next-card grad-mint">
         <div class="next-card-icon">&#x1F4DD;</div>
         <div class="next-card-info">
-          <h3>프로젝트로 나만의 스킬 저장하기</h3>
+          <h3>프로젝트로 나만의 작업환경 저장하기</h3>
           <p>클로드 챗의 "프로젝트" 기능에 커스텀 지시사항을 저장해두면, 매번 같은 설명을 반복하지 않아도 돼요. 예: "나는 중학교 체육교사야. GAS 웹앱을 만들 때 항상 스프레드시트에 저장해줘."</p>
         </div>
       </div>
@@ -2044,6 +2045,77 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
           <p>학생 명단, 학교 로고, 시간표 등 자주 쓰는 파일을 프로젝트에 미리 첨부해두면, 매번 첨부하지 않아도 클로드가 알아서 참고해요</p>
         </div>
       </div>
+
+      <div class="next-group-title en">나만의 스킬(Skills) 만들기</div>
+      <div class="deploy-intro" style="background:linear-gradient(135deg,rgba(123,47,247,0.08),rgba(59,130,246,0.08));border-color:rgba(123,47,247,0.2);margin-bottom:20px;">
+        <strong>스킬(Skills)</strong>은 "특정 작업을 하는 방법"을 클로드에게 미리 가르쳐 패키지로 저장해두는 기능이에요. 한번 만들어두면, 관련된 요청을 할 때 클로드가 <strong>필요할 때 자동으로</strong> 그 스킬을 꺼내 똑같은 방식으로 처리해줘요.<br>
+        프로젝트가 <em>"항상 켜두는 배경지식"</em>이라면, 스킬은 <em>"필요할 때만 자동으로 꺼내 쓰는 도구"</em>예요.
+      </div>
+
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level4-icon">&#x1F914;</div>
+          <div class="card-info">
+            <div class="card-title">스킬 vs 프로젝트, 뭐가 다를까?</div>
+            <div class="card-desc">헷갈리기 쉬운 두 기능, 한눈에 정리</div>
+          </div>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="customize-box">
+            <h4>&#x1F4C1; 프로젝트 (Projects)</h4>
+            <ul>
+              <li>대화를 시작하면 <strong>항상</strong> 자동으로 켜지는 배경지식</li>
+              <li>공통 지시사항 + 자주 쓰는 파일을 한 공간에 모아둠</li>
+              <li>"항상 적용돼야 하는 내 설정"에 적합</li>
+            </ul>
+          </div>
+          <div class="customize-box" style="margin-top:12px;">
+            <h4>&#x26A1; 스킬 (Skills)</h4>
+            <ul>
+              <li>관련 작업일 때만 <strong>필요할 때 자동으로</strong> 불러옴</li>
+              <li>특정 작업의 '방법·절차'를 패키지로 저장</li>
+              <li>"특정 작업을 늘 같은 방식으로"에 적합</li>
+            </ul>
+          </div>
+          <div class="start-tip" style="margin-top:16px;">클로드 챗엔 이미 <strong>문서 만들기 스킬</strong>(PPT·엑셀·워드·PDF)이 들어있어요. "엑셀로 정리해줘", "PPT로 만들어줘" 하면 진짜 파일을 만들어주는 게 바로 스킬이 작동하는 예시예요.</div>
+        </div>
+      </details>
+
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level4-icon">&#x1F6E0;&#xFE0F;</div>
+          <div class="card-info">
+            <div class="card-title">나만의 스킬 만들기 (코딩 없이)</div>
+            <div class="card-desc">자주 반복하는 작업을 나만의 스킬로 저장</div>
+          </div>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level4-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">내가 자주 하는 작업을 스킬로 만들고 싶어.
+"가정통신문을 만들 때 항상 우리 학교 이름을 넣고, 존댓말로, A4 한 장 분량으로 작성한다"
+이 규칙을 스킬로 만들어줘.</div>
+          </div>
+          <ol class="steps">
+            <li>위처럼 <strong>"스킬 만들어줘"</strong>라고 요청하면, 클로드가 질문을 던지며 스킬을 대신 만들어줘요 (파일 편집·코딩 필요 없음)</li>
+            <li>완성된 스킬을 <strong>ZIP 파일</strong>로 받기</li>
+            <li>클로드 챗 <strong>Customize(커스터마이즈) → Skills(스킬)</strong> 메뉴 열기</li>
+            <li><strong>＋ 버튼 → Create skill</strong>에서 ZIP 파일 업로드</li>
+            <li>끝! 이제 관련 요청을 하면 클로드가 그 스킬을 <strong>자동으로</strong> 사용해요</li>
+          </ol>
+          <div class="customize-box">
+            <h4>스킬 잘 만드는 팁</h4>
+            <ul>
+              <li>핵심은 <strong>설명(description)</strong> — "언제 쓰는 스킬인지"를 명확히 적어야 클로드가 알아서 꺼내 써요</li>
+              <li>예: "학급 가정통신문을 작성할 때 사용"</li>
+              <li>짧고 자주 반복하는 작업부터 시작해보세요</li>
+            </ul>
+          </div>
+        </div>
+      </details>
 
       <div class="next-group-title en">고급 앱</div>
       <div class="next-card grad-dark">
