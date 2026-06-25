@@ -1978,20 +1978,76 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
 
     <div class="fade-in">
       <div class="next-group-title en">API 활용</div>
-      <div class="next-card grad-blue">
-        <div class="next-card-icon">&#x1F324;</div>
-        <div class="next-card-info">
-          <h3>날씨 API로 운동장 체육 알리미</h3>
-          <p>실시간 날씨를 확인하고 운동장 체육 가능 여부를 자동 판단</p>
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level4-icon">&#x1F324;&#xFE0F;</div>
+          <div class="card-info">
+            <div class="card-title">날씨 API로 운동장 체육 알리미</div>
+            <div class="card-desc">실시간 날씨를 확인하고 운동장 체육 가능 여부를 자동 판단</div>
+          </div>
+          <span class="diff-badge mid">API</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level4-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">하나의 HTML 파일로 "오늘 운동장 체육 가능?" 알리미를 만들어줘.
+무료 날씨 API로 우리 지역의 현재 기온, 강수확률, 미세먼지를 가져와서
+"체육 가능 / 실내 권장 / 불가"를 신호등(초록·노랑·빨강)으로 크게 보여줘.
+비·폭염·한파·미세먼지 나쁨이면 자동으로 경고해줘.
+지역은 "OO시"로 설정해줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai에 프롬프트 입력</li>
+            <li>날씨 API 키가 필요하면 클로드가 발급 방법을 안내해줘요 (키 발급 후 알려주기)</li>
+            <li>생성된 코드를 저장하고 브라우저에서 확인</li>
+            <li>지역·판단 기준을 우리 학교에 맞게 수정 요청</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"키 없이 쓸 수 있는 무료 날씨 API로 만들어줘" (예: Open-Meteo)</li>
+              <li>"내일 오전 날씨도 같이 보여줘"</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="next-card grad-orange">
-        <div class="next-card-icon">&#x1F371;</div>
-        <div class="next-card-info">
-          <h3>급식 API(나이스)로 오늘의 급식 앱</h3>
-          <p>나이스 교육정보 API를 연동해서 오늘의 급식 메뉴를 보여주는 앱</p>
+      </details>
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level4-icon">&#x1F371;</div>
+          <div class="card-info">
+            <div class="card-title">급식 API(나이스)로 오늘의 급식 앱</div>
+            <div class="card-desc">나이스 교육정보 API를 연동해서 오늘의 급식 메뉴를 보여주는 앱</div>
+          </div>
+          <span class="diff-badge mid">API</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level4-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">하나의 HTML 파일로 "오늘의 급식" 앱을 만들어줘.
+나이스(NEIS) 교육정보 개방 포털의 급식 식단 API를 연동해서
+우리 학교의 오늘·이번 주 급식 메뉴와 칼로리, 알레르기 정보를 보여줘.
+학교 코드(시도교육청코드, 학교코드)와 인증키는 내가 알려줄게.
+모바일에서 보기 편한 카드형으로 만들어줘.</div>
+          </div>
+          <ol class="steps">
+            <li>나이스 교육정보 개방포털(open.neis.go.kr)에서 <strong>인증키 신청</strong> (무료)</li>
+            <li>우리 학교의 <strong>시도교육청코드·학교코드</strong> 확인</li>
+            <li>claude.ai에 프롬프트 + 코드·인증키 정보 입력</li>
+            <li>생성된 코드를 저장하고 브라우저에서 확인</li>
+          </ol>
+          <div class="customize-box">
+            <h4>꿀팁</h4>
+            <ul>
+              <li>학교코드는 개방포털 "학교기본정보"에서 학교 이름으로 검색하면 나와요</li>
+              <li>"알레르기 정보는 아이콘으로 표시해줘"</li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </details>
       <div class="next-card grad-mint">
         <div class="next-card-icon">&#x1F5FA;</div>
         <div class="next-card-info">
@@ -2001,13 +2057,39 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
       </div>
 
       <div class="next-group-title en">MCP 활용</div>
-      <div class="next-card grad-purple">
-        <div class="next-card-icon">&#x1F4C5;</div>
-        <div class="next-card-info">
-          <h3>구글 캘린더 연동 학사일정 관리</h3>
-          <p>MCP로 구글 캘린더를 연동해 학사일정을 자동 관리</p>
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level4-icon">&#x1F4C5;</div>
+          <div class="card-info">
+            <div class="card-title">구글 캘린더 연동 학사일정 관리</div>
+            <div class="card-desc">MCP(커넥터)로 구글 캘린더를 연동해 학사일정을 자동 관리</div>
+          </div>
+          <span class="diff-badge hard">MCP</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level4-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">구글 캘린더 커넥터를 연결한 상태에서,
+우리 반 학사일정을 관리하고 싶어.
+다가오는 2주 일정을 정리해서 보여주고,
+"다음 주 화요일 5교시 수행평가"를 캘린더에 추가해줘.</div>
+          </div>
+          <ol class="steps">
+            <li>클로드 챗 <strong>설정 > 커넥터(Connectors)</strong>에서 Google Calendar 연결</li>
+            <li>위처럼 자연어로 일정 조회·추가를 요청</li>
+            <li>클로드가 캘린더를 직접 읽고 일정을 추가해줘요</li>
+          </ol>
+          <div class="customize-box">
+            <h4>알아두기</h4>
+            <ul>
+              <li>MCP(커넥터)는 클로드가 외부 서비스를 직접 다루게 해주는 연결 기능이에요</li>
+              <li>한 번 연결해두면 다음부터는 말만 하면 돼요</li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </details>
       <div class="next-card grad-pink">
         <div class="next-card-icon">&#x1F4E7;</div>
         <div class="next-card-info">
@@ -3090,12 +3172,12 @@ C안: 컬러풀하고 활기찬 느낌
         <div class="deploy-intro">드래그 앤 드롭만으로 배포할 수 있어요. 가장 쉬운 방법! Level 1, Level 3(프론트엔드) 결과물에 적합합니다.</div>
         <ol class="steps">
           <li><strong>Netlify 접속</strong> — netlify.com에 접속해서 <strong>Sign up</strong> 클릭. GitHub 계정으로 로그인하면 편해요</li>
-          <li><strong>Sites 페이지로 이동</strong> — 로그인 후 왼쪽 메뉴에서 <strong>Sites</strong> 클릭</li>
-          <li><strong>폴더 준비</strong> — 클로드 챗에서 받은 코드를 <strong>index.html</strong> 파일로 저장하고, 하나의 폴더에 넣어둡니다</li>
-          <li><strong>드래그 앤 드롭!</strong> — Sites 페이지 하단에 "Want to deploy a new site without connecting to Git? <strong>Drag and drop</strong> your site output folder here" 영역이 보입니다. 여기에 폴더를 그대로 끌어다 놓으세요</li>
+          <li><strong>폴더 준비</strong> — 클로드 챗에서 받은 코드를 <strong>index.html</strong> 파일로 저장하고, 폴더 하나에 넣어둡니다. (폴더 안에 <strong>index.html</strong>이 꼭 있어야 해요)</li>
+          <li><strong>Add new project</strong> — 로그인하면 보이는 <strong>Projects</strong> 페이지에서 오른쪽 위 <strong>Add new project</strong> 메뉴를 열고 <strong>Deploy manually</strong> 선택. (옛 화면에서는 <strong>Sites</strong> · <strong>Add new site</strong>로 보일 수 있어요)</li>
+          <li><strong>드래그 앤 드롭!</strong> — 화면에 나타나는 <strong>드롭존(Drag and drop your project output folder here)</strong>에 준비한 폴더를 그대로 끌어다 놓으세요</li>
           <li><strong>배포 완료!</strong> — 몇 초 후 자동으로 랜덤 주소가 생성됩니다. (예: happy-cat-1234.netlify.app) 클릭하면 내 페이지가 바로 보여요!</li>
         </ol>
-        <div class="deploy-tip">주소를 바꾸고 싶으면? Site configuration > Site name에서 원하는 이름으로 변경할 수 있어요. (예: my-class-app.netlify.app)</div>
+        <div class="deploy-tip">주소를 바꾸고 싶으면? <strong>Project configuration > Change site name</strong>에서 원하는 이름으로 변경할 수 있어요. (예: my-class-app.netlify.app) · 폴더는 50MB 이하, 파일 하나가 10MB를 넘지 않게 하세요.</div>
       </div>
 
       <!-- GAS 배포 탭 -->
