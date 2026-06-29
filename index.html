@@ -4,30 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>클로드 챗 연수 실습 가이드 | Kimju.zip</title>
-<meta name="description" content="프롬프트 하나로, 나만의 웹앱을 만들어보세요. 클로드 챗으로 코딩 없이 웹앱을 만드는 교사 연수 실습 가이드 — 프론트엔드부터 백엔드, 실전 프로젝트까지.">
-<meta name="author" content="@kimju.zip">
-
-<!-- ── Open Graph (카카오톡 / 페이스북 공유) ── -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Kimju.zip">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="클로드 챗 연수 실습 가이드">
-<meta property="og:description" content="프롬프트 하나로, 나만의 웹앱을 만들어보세요. 코딩 없이 따라 하는 교사 연수 실습 가이드.">
-<meta property="og:url" content="https://kimju1416.github.io/kimju-practice/">
-<meta property="og:image" content="https://kimju1416.github.io/kimju-practice/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="클로드 챗 연수 실습 가이드">
-
-<!-- ── Twitter Card ── -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="클로드 챗 연수 실습 가이드">
-<meta name="twitter:description" content="프롬프트 하나로, 나만의 웹앱을 만들어보세요. 코딩 없이 따라 하는 교사 연수 실습 가이드.">
-<meta name="twitter:image" content="https://kimju1416.github.io/kimju-practice/og-image.png">
-
-<!-- ── 파비콘 (이모지 SVG) ── -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -35,32 +11,53 @@
 <style>
 /* ============================================
    클로드 챗 연수 실습 가이드
-   비비드 컬러풀 페스티벌 테마
+   Claude 클레이 & 따뜻한 테라코타 테마
    만든 사람: @kimju.zip
 ============================================ */
 
 :root {
-  --primary: #FF6B35;
-  --secondary: #7B2FF7;
-  --accent1: #00D4AA;
-  --accent2: #FF3366;
-  --accent3: #FFD23F;
-  --accent4: #3B82F6;
-  --bg: #FFFDF7;
-  --bg2: #FFF8F0;
-  --bg3: #F0F7FF;
-  --ink: #1A1A2E;
-  --ink2: #6B7280;
-  --level1: #00D4AA;
-  --level2: #FFD23F;
-  --level3: #FF3366;
-  --level4: #7B2FF7;
-  --diff-easy: #00D4AA;
-  --diff-mid: #FF6B35;
-  --diff-hard: #FF3366;
+  /* Claude 클레이 & 따뜻한 테라코타 */
+  --clay: #D97757;
+  --clay-dark: #C45D3A;
+  --clay-soft: #F6E9E2;
+
+  --primary: #D97757;
+  --secondary: #C45D3A;
+  --accent1: #3F8F6B;
+  --accent2: #B8742A;
+  --accent3: #D4975A;
+  --accent4: #2F6FB0;
+
+  --bg: #FAF7F4;
+  --bg2: #F5EDE5;
+  --bg3: #F0F4FF;
+
+  --ink: #2B2622;
+  --ink2: #5C544D;
+  --line: #E8E1DA;
+  --card: #FFFFFF;
+
+  --good: #3F8F6B;
+  --good-soft: #E6F2EC;
+  --warn: #B8742A;
+  --warn-soft: #FBEFDD;
+  --blue: #2F6FB0;
+  --blue-soft: #E7F0F8;
+  --code-bg: #2B2622;
+  --code-ink: #F3EDE7;
+
+  --level1: #3F8F6B;
+  --level2: #B8742A;
+  --level3: #D97757;
+  --level4: #2F6FB0;
+
+  --diff-easy: #3F8F6B;
+  --diff-mid: #B8742A;
+  --diff-hard: #D97757;
+
   --radius: 16px;
-  --shadow: 0 2px 12px rgba(0,0,0,0.06);
-  --shadow-hover: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow: 0 1px 2px rgba(43,38,34,.04), 0 8px 28px rgba(43,38,34,.06);
+  --shadow-hover: 0 4px 20px rgba(43,38,34,.12);
 }
 
 *, *::before, *::after {
@@ -89,13 +86,13 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255,253,247,0.82);
+  background: rgba(250,247,244,0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid var(--line);
   transition: box-shadow 0.3s;
 }
-.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.navbar.scrolled { box-shadow: 0 2px 20px rgba(43,38,34,.08); }
 
 .nav-inner {
   max-width: 1200px;
@@ -132,8 +129,8 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
   transition: all 0.2s;
   white-space: nowrap;
 }
-.nav-links a:hover { color: var(--ink); background: rgba(0,0,0,0.04); }
-.nav-links a.active { color: var(--primary); background: rgba(255,107,53,0.08); }
+.nav-links a:hover { color: var(--ink); background: rgba(43,38,34,0.05); }
+.nav-links a.active { color: var(--primary); background: var(--clay-soft); }
 
 .hamburger {
   display: none;
@@ -167,7 +164,7 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
     backdrop-filter: blur(16px);
     flex-direction: column;
     padding: 12px 16px;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid var(--line);
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px 16px; border-radius: 12px; }
@@ -179,13 +176,15 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
   padding: 100px 24px 80px;
   text-align: center;
   overflow: hidden;
+  background: radial-gradient(120% 130% at 100% 0%, rgba(244,218,203,0.5) 0%, transparent 55%),
+              radial-gradient(120% 130% at 0% 100%, rgba(239,231,223,0.4) 0%, transparent 50%);
 }
 
 .hero-blob {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.25;
+  opacity: 0.1;
   pointer-events: none;
 }
 .hero-blob-1 {
@@ -211,8 +210,8 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(123,47,247,0.08);
-  color: var(--secondary);
+  background: var(--clay-soft);
+  color: var(--clay-dark);
   font-size: 0.9rem;
   font-weight: 600;
   padding: 8px 20px;
@@ -294,7 +293,7 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.12;
+  opacity: 0.07;
   pointer-events: none;
   width: 400px; height: 400px;
 }
@@ -303,9 +302,8 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
   margin-bottom: 48px;
 }
 .section-label {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 8px;
@@ -338,14 +336,14 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
   border-radius: 100px;
   margin-bottom: 20px;
 }
-.diff-easy .diff-group-label { background: rgba(0,212,170,0.1); color: #00a885; }
-.diff-mid .diff-group-label { background: rgba(255,107,53,0.1); color: var(--diff-mid); }
-.diff-hard .diff-group-label { background: rgba(255,51,102,0.1); color: var(--diff-hard); }
+.diff-easy .diff-group-label { background: rgba(63,143,107,0.1); color: #2D7A58; }
+.diff-mid .diff-group-label { background: rgba(184,116,42,0.1); color: var(--diff-mid); }
+.diff-hard .diff-group-label { background: rgba(217,119,87,0.1); color: var(--diff-hard); }
 
 /* ── 실습 카드 ── */
 .practice-card {
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   margin-bottom: 16px;
   box-shadow: var(--shadow);
@@ -355,6 +353,7 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
 .practice-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
+  border-color: var(--clay);
 }
 
 .practice-card summary {
@@ -398,9 +397,9 @@ code, .mono { font-family: 'JetBrains Mono', monospace; }
   flex-shrink: 0;
   white-space: nowrap;
 }
-.diff-badge.easy { background: rgba(0,212,170,0.12); color: #00a885; }
-.diff-badge.mid { background: rgba(255,107,53,0.12); color: var(--diff-mid); }
-.diff-badge.hard { background: rgba(255,51,102,0.12); color: var(--diff-hard); }
+.diff-badge.easy { background: rgba(63,143,107,0.12); color: #2D7A58; }
+.diff-badge.mid { background: rgba(184,116,42,0.12); color: var(--diff-mid); }
+.diff-badge.hard { background: rgba(217,119,87,0.12); color: var(--diff-hard); }
 
 .card-chevron {
   flex-shrink: 0;
@@ -412,7 +411,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
 
 .card-body {
   padding: 0 24px 24px;
-  border-top: 1px solid rgba(0,0,0,0.04);
+  border-top: 1px solid var(--line);
   padding-top: 20px;
 }
 
@@ -434,6 +433,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   display: flex;
   align-items: center;
   gap: 6px;
+  color: var(--clay-dark);
 }
 .prompt-text {
   font-family: 'JetBrains Mono', monospace;
@@ -441,13 +441,12 @@ details[open] .card-chevron { transform: rotate(180deg); }
   line-height: 1.8;
   color: var(--ink);
   white-space: pre-wrap;
-  word-break: keep-all;
-  overflow-wrap: break-word;
+  word-break: break-all;
 }
 .copy-btn {
   position: absolute;
   top: 12px; right: 12px;
-  background: rgba(0,0,0,0.06);
+  background: rgba(43,38,34,0.06);
   border: none;
   border-radius: 8px;
   padding: 6px 14px;
@@ -458,20 +457,19 @@ details[open] .card-chevron { transform: rotate(180deg); }
   font-family: 'Pretendard', sans-serif;
   transition: all 0.2s;
 }
-.copy-btn:hover { background: rgba(0,0,0,0.1); }
-.copy-btn.copied { background: var(--accent1); color: #fff; }
+.copy-btn:hover { background: var(--clay-soft); color: var(--clay-dark); }
+.copy-btn.copied { background: var(--good); color: #fff; }
 
 /* 레벨별 프롬프트 색상 */
-.level1-prompt { background: rgba(0,212,170,0.06); }
-.level2-prompt { background: rgba(255,210,63,0.08); }
-.level3-prompt { background: rgba(255,51,102,0.06); }
-.level4-prompt { background: rgba(123,47,247,0.06); }
+.level1-prompt { background: rgba(63,143,107,0.06); }
+.level2-prompt { background: rgba(184,116,42,0.06); }
+.level3-prompt { background: rgba(217,119,87,0.07); }
 
 /* 레벨별 카드 아이콘 배경 */
-.level1-icon { background: rgba(0,212,170,0.1); }
-.level2-icon { background: rgba(255,210,63,0.12); }
-.level3-icon { background: rgba(255,51,102,0.08); }
-.level4-icon { background: rgba(123,47,247,0.08); }
+.level1-icon { background: rgba(63,143,107,0.1); }
+.level2-icon { background: rgba(184,116,42,0.1); }
+.level3-icon { background: rgba(217,119,87,0.1); }
+.level4-icon { background: rgba(47,111,176,0.1); }
 
 /* 스텝 리스트 */
 .steps {
@@ -493,7 +491,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   left: 0; top: 8px;
   width: 28px; height: 28px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.06);
+  background: rgba(43,38,34,0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -501,17 +499,9 @@ details[open] .card-chevron { transform: rotate(180deg); }
   font-weight: 700;
   color: var(--ink2);
 }
-.steps-lead {
-  margin: 14px 0 0;
-  font-size: 0.95rem;
-  color: var(--ink);
-}
-.steps-lead + .steps {
-  margin-top: 8px;
-}
 
 .customize-box {
-  background: var(--bg2);
+  background: var(--clay-soft);
   border-radius: 12px;
   padding: 16px 20px;
   margin-top: 16px;
@@ -536,17 +526,17 @@ details[open] .card-chevron { transform: rotate(180deg); }
   position: relative;
 }
 .customize-box li::before {
-  content: '>';
+  content: '·';
   position: absolute;
   left: 0;
-  color: var(--primary);
+  color: var(--clay);
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
 }
 
 /* ── 터미널 블록 ── */
 .terminal-block {
-  background: #1a1a2e;
+  background: #2B2622;
   border-radius: 14px;
   overflow: hidden;
   margin: 16px 0;
@@ -587,16 +577,15 @@ details[open] .card-chevron { transform: rotate(180deg); }
   transition: all 0.2s;
 }
 .terminal-copy:hover { background: rgba(255,255,255,0.15); color: #fff; }
-.terminal-copy.copied { background: var(--accent1); color: #fff; }
+.terminal-copy.copied { background: var(--good); color: #fff; }
 .terminal-code {
   padding: 16px 20px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
   line-height: 1.8;
-  color: #a8e6cf;
+  color: #A8D5B5;
   white-space: pre-wrap;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+  word-break: break-all;
   overflow-x: auto;
 }
 
@@ -641,12 +630,12 @@ details[open] .card-chevron { transform: rotate(180deg); }
 }
 .next-group-title:first-child { margin-top: 0; }
 
-.grad-purple { background: linear-gradient(135deg, #7B2FF7, #9b59ff); }
-.grad-pink { background: linear-gradient(135deg, #FF3366, #ff6b8a); }
-.grad-blue { background: linear-gradient(135deg, #3B82F6, #60a5fa); }
-.grad-orange { background: linear-gradient(135deg, #FF6B35, #ff9a6c); }
-.grad-mint { background: linear-gradient(135deg, #00D4AA, #40e8c4); }
-.grad-dark { background: linear-gradient(135deg, #1a1a2e, #2d2d5e); }
+.grad-purple { background: linear-gradient(135deg, #7B5EA7, #9B7EC8); }
+.grad-pink { background: linear-gradient(135deg, #C45D3A, #D97757); }
+.grad-blue { background: linear-gradient(135deg, #2F6FB0, #5293CC); }
+.grad-orange { background: linear-gradient(135deg, #B8742A, #D4975A); }
+.grad-mint { background: linear-gradient(135deg, #3F8F6B, #6AB090); }
+.grad-dark { background: linear-gradient(135deg, #2B2622, #4A3F39); }
 
 /* ── 배포 가이드 탭 ── */
 .deploy-tabs {
@@ -666,16 +655,16 @@ details[open] .card-chevron { transform: rotate(180deg); }
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  background: rgba(0,0,0,0.04);
+  background: rgba(43,38,34,0.04);
   color: var(--ink2);
   transition: all 0.2s;
   user-select: none;
 }
-.tab-label:hover { background: rgba(0,0,0,0.08); }
+.tab-label:hover { background: var(--clay-soft); color: var(--clay-dark); }
 #tab-gh:checked ~ .tab-buttons label[for="tab-gh"],
 #tab-netlify:checked ~ .tab-buttons label[for="tab-netlify"],
 #tab-gas:checked ~ .tab-buttons label[for="tab-gas"] {
-  background: var(--primary);
+  background: var(--clay);
   color: #fff;
 }
 .tab-content { display: none; }
@@ -698,12 +687,12 @@ details[open] .card-chevron { transform: rotate(180deg); }
   border: 2px solid;
 }
 .compare-card.bad {
-  background: rgba(255,51,102,0.04);
-  border-color: rgba(255,51,102,0.3);
+  background: rgba(184,116,42,0.04);
+  border-color: rgba(184,116,42,0.3);
 }
 .compare-card.good {
-  background: rgba(0,212,170,0.04);
-  border-color: rgba(0,212,170,0.3);
+  background: rgba(63,143,107,0.04);
+  border-color: rgba(63,143,107,0.3);
 }
 .compare-label {
   font-family: 'Outfit', sans-serif;
@@ -729,7 +718,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   display: flex;
   gap: 24px;
   padding: 32px 0;
-  border-top: 1px solid rgba(0,0,0,0.06);
+  border-top: 1px solid rgba(43,38,34,0.06);
 }
 .method-number {
   flex: 0 0 48px;
@@ -758,8 +747,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
 }
 .method-sub { font-size: 0.88rem; color: var(--ink2); margin-top: 10px; }
 .method-tip {
-  background: rgba(255,210,63,0.1);
-  border-left: 4px solid var(--accent3);
+  background: var(--warn-soft);
+  border-left: 4px solid var(--warn);
   border-radius: 0 10px 10px 0;
   padding: 12px 16px;
   margin-top: 16px;
@@ -776,8 +765,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
   display: inline-block;
   padding: 6px 16px;
   border-radius: 20px;
-  background: rgba(255,107,53,0.08);
-  border: 1px solid rgba(255,107,53,0.2);
+  background: var(--clay-soft);
+  border: 1px solid rgba(217,119,87,0.3);
   color: var(--primary);
   font-weight: 600;
   font-size: 0.88rem;
@@ -785,7 +774,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   transition: all 0.2s;
 }
 .ref-tag:hover {
-  background: rgba(255,107,53,0.15);
+  background: rgba(217,119,87,0.15);
   transform: translateY(-2px);
 }
 .ref-tag.active {
@@ -800,9 +789,9 @@ details[open] .card-chevron { transform: rotate(180deg); }
   align-items: center;
   gap: 14px;
   padding: 14px 18px;
-  background: rgba(0,0,0,0.02);
+  background: var(--clay-soft);
   border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(217,119,87,0.15);
 }
 .flow-num {
   flex: 0 0 auto;
@@ -830,7 +819,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   padding: 18px 16px;
   border-radius: var(--radius);
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid var(--line);
   text-decoration: none;
   color: var(--ink);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -856,8 +845,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
   margin-top: 40px;
   padding: 32px 28px;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, rgba(255,107,53,0.06), rgba(123,47,247,0.06));
-  border: 1px solid rgba(255,107,53,0.15);
+  background: linear-gradient(135deg, rgba(217,119,87,0.06), rgba(184,116,42,0.06));
+  border: 1px solid rgba(217,119,87,0.2);
 }
 .design-summary h3 {
   font-size: 1.1rem;
@@ -878,7 +867,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   padding: 10px 18px;
   background: #fff;
   border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid var(--line);
 }
 .summary-num {
   width: 28px;
@@ -906,12 +895,13 @@ details[open] .card-chevron { transform: rotate(180deg); }
   padding: 18px 16px;
   border-radius: 12px;
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid var(--line);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .style-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
+  border-color: var(--clay);
 }
 .style-name {
   font-weight: 700;
@@ -928,8 +918,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
 .style-prompt {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.78rem;
-  color: var(--primary);
-  background: rgba(255,107,53,0.06);
+  color: var(--clay-dark);
+  background: var(--clay-soft);
   padding: 8px 12px;
   border-radius: 8px;
   line-height: 1.5;
@@ -960,7 +950,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   padding: 28px 24px;
   border-radius: var(--radius);
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid var(--line);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .start-card:hover {
@@ -991,8 +981,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
   margin-top: 12px;
   padding: 10px 14px;
   border-radius: 8px;
-  background: rgba(255,210,63,0.1);
-  border-left: 3px solid var(--accent3);
+  background: var(--warn-soft);
+  border-left: 3px solid var(--warn);
   font-size: 0.85rem;
   color: var(--ink);
   line-height: 1.6;
@@ -1013,12 +1003,12 @@ details[open] .card-chevron { transform: rotate(180deg); }
 .faq-item {
   border-radius: 14px;
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid var(--line);
   overflow: hidden;
   transition: border-color 0.2s;
 }
-.faq-item:hover { border-color: rgba(255,51,102,0.3); }
-.faq-item[open] { border-color: rgba(255,51,102,0.3); }
+.faq-item:hover { border-color: rgba(217,119,87,0.3); }
+.faq-item[open] { border-color: var(--clay); }
 .faq-item summary {
   padding: 18px 24px;
   font-weight: 600;
@@ -1038,8 +1028,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(255,51,102,0.08);
-  color: var(--accent2);
+  background: var(--clay-soft);
+  color: var(--clay);
   font-weight: 700;
   font-size: 1.2rem;
   display: flex;
@@ -1068,7 +1058,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   width: 100%;
   padding: 14px 20px;
   border-radius: 12px;
-  border: 2px solid rgba(0,0,0,0.08);
+  border: 2px solid var(--line);
   background: #fff;
   font-size: 1rem;
   font-family: inherit;
@@ -1077,7 +1067,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   transition: border-color 0.2s;
   margin-bottom: 14px;
 }
-.glossary-search:focus { border-color: var(--accent4); }
+.glossary-search:focus { border-color: var(--clay); }
 .glossary-search::placeholder { color: var(--ink2); }
 
 .glossary-cats {
@@ -1088,7 +1078,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
 .cat-btn {
   padding: 7px 18px;
   border-radius: 20px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid var(--line);
   background: #fff;
   color: var(--ink2);
   font-size: 0.88rem;
@@ -1097,11 +1087,11 @@ details[open] .card-chevron { transform: rotate(180deg); }
   cursor: pointer;
   transition: all 0.2s;
 }
-.cat-btn:hover { border-color: var(--accent4); color: var(--accent4); }
+.cat-btn:hover { border-color: var(--clay); color: var(--clay); }
 .cat-btn.active {
-  background: var(--accent4);
+  background: var(--clay);
   color: #fff;
-  border-color: var(--accent4);
+  border-color: var(--clay);
 }
 
 .glossary-grid {
@@ -1113,13 +1103,13 @@ details[open] .card-chevron { transform: rotate(180deg); }
   padding: 20px;
   border-radius: 14px;
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid var(--line);
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 .glossary-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(59,130,246,0.3);
+  border-color: rgba(217,119,87,0.3);
 }
 .glossary-card.hidden { display: none; }
 .glossary-term {
@@ -1132,7 +1122,7 @@ details[open] .card-chevron { transform: rotate(180deg); }
   font-family: 'Outfit', sans-serif;
   font-weight: 500;
   font-size: 0.8rem;
-  color: var(--accent4);
+  color: var(--clay);
   margin-left: 6px;
 }
 .glossary-def {
@@ -1144,8 +1134,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
 .glossary-usage {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.8rem;
-  color: var(--primary);
-  background: rgba(255,107,53,0.06);
+  color: var(--clay-dark);
+  background: var(--clay-soft);
   padding: 8px 12px;
   border-radius: 8px;
   line-height: 1.5;
@@ -1157,8 +1147,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
 
 /* ── 배포 가이드 스타일 ── */
 .deploy-intro {
-  background: linear-gradient(135deg, rgba(0,212,170,0.08), rgba(59,130,246,0.08));
-  border: 1px solid rgba(0,212,170,0.2);
+  background: linear-gradient(135deg, rgba(63,143,107,0.07), rgba(47,111,176,0.07));
+  border: 1px solid rgba(63,143,107,0.2);
   border-radius: 12px;
   padding: 16px 20px;
   margin-bottom: 20px;
@@ -1168,8 +1158,8 @@ details[open] .card-chevron { transform: rotate(180deg); }
 }
 
 .deploy-tip {
-  background: rgba(255,210,63,0.1);
-  border-left: 4px solid var(--accent3);
+  background: var(--warn-soft);
+  border-left: 4px solid var(--warn);
   border-radius: 0 12px 12px 0;
   padding: 14px 20px;
   margin-top: 20px;
@@ -1181,46 +1171,10 @@ details[open] .card-chevron { transform: rotate(180deg); }
 /* ── 푸터 ── */
 .footer {
   text-align: center;
-  padding: 56px 24px 40px;
-  background: var(--ink);
-  color: rgba(255,255,255,0.6);
+  padding: 48px 24px;
+  background: var(--code-bg);
+  color: rgba(243,237,231,0.6);
   font-size: 0.9rem;
-}
-.footer-inner { max-width: 720px; margin: 0 auto; }
-.footer-brand {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  font-size: 1.5rem;
-  letter-spacing: -0.5px;
-  color: #fff;
-  margin-bottom: 8px;
-}
-.footer-brand span { color: var(--primary); }
-.footer-tagline {
-  color: rgba(255,255,255,0.5);
-  font-size: 0.92rem;
-  margin-bottom: 24px;
-}
-.footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 20px;
-  margin-bottom: 28px;
-}
-.footer-nav a {
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.footer-nav a:hover { color: var(--accent1); }
-.footer-divider {
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin: 0 auto 24px;
-  max-width: 480px;
 }
 .footer a {
   color: var(--accent1);
@@ -1229,11 +1183,6 @@ details[open] .card-chevron { transform: rotate(180deg); }
 }
 .footer a:hover { text-decoration: underline; }
 .footer-line { margin: 6px 0; }
-.footer-copy {
-  margin-top: 14px;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.35);
-}
 
 /* ── 애니메이션 ── */
 .fade-in {
@@ -1266,27 +1215,12 @@ details[open] .card-chevron { transform: rotate(180deg); }
 /* 스크롤바 */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.25); }
+::-webkit-scrollbar-thumb { background: rgba(43,38,34,0.15); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(43,38,34,0.25); }
 
 /* details 열린 상태 호버 제어 */
 details[open].practice-card { transform: none; }
 details[open].practice-card:hover { transform: none; }
-
-/* ── 모바일 터치 영역 최적화 (권장 44px) ── */
-@media (max-width: 768px) {
-  .copy-btn {
-    top: 10px; right: 10px;
-    padding: 9px 16px;
-    font-size: 0.85rem;
-  }
-  .terminal-copy { padding: 8px 16px; font-size: 0.8rem; }
-  .cat-btn { padding: 11px 18px; }
-  .ref-tag { padding: 10px 18px; }
-  .tab-label { padding: 13px 24px; }
-  /* 프롬프트 블록 우측 상단 복사버튼과 텍스트 겹침 방지 */
-  .prompt-label { padding-right: 64px; }
-}
 </style>
 </head>
 <body>
@@ -1385,22 +1319,15 @@ details[open].practice-card:hover { transform: none; }
         <div class="start-num">4</div>
         <div class="start-content">
           <h3>코드 저장하는 법</h3>
-          <p class="steps-lead"><strong>방법 A. 다운로드 버튼 (가장 쉬움 &#x2728;)</strong></p>
           <ol class="steps">
-            <li>클로드가 코드를 만들면 화면 오른쪽에 <strong>미리보기 창</strong>이 떠요</li>
-            <li>그 창의 <strong>다운로드 버튼(&#x2193;)</strong> 클릭</li>
-            <li>파일 이름을 <strong>index.html</strong> 로 저장하면 끝! 브라우저로 바로 열려요</li>
-          </ol>
-          <p class="steps-lead"><strong>방법 B. 복사 버튼만 보일 때</strong></p>
-          <ol class="steps">
-            <li>코드 박스 오른쪽 위 <strong>복사</strong> 버튼 클릭</li>
+            <li>클로드가 코드를 보여주면 오른쪽 위 <strong>복사</strong> 버튼 클릭</li>
             <li>컴퓨터에서 <strong>메모장</strong>(Windows) 또는 <strong>텍스트 편집기</strong>(Mac) 열기</li>
             <li>복사한 코드 <strong>붙여넣기</strong> (Ctrl+V)</li>
             <li><strong>다른 이름으로 저장</strong> → 파일 이름을 <strong>index.html</strong> 로 입력</li>
-            <li>파일 형식을 <strong>모든 파일(*.*)</strong>로 변경 후 저장</li>
+            <li>파일 형식(인코딩)을 <strong>모든 파일</strong>로 변경 후 저장</li>
             <li>저장된 파일을 <strong>더블클릭</strong>하면 브라우저에서 바로 열림!</li>
           </ol>
-          <div class="start-tip">대부분은 <strong>방법 A</strong>면 충분해요. 미리보기 창에 다운로드 버튼이 안 보일 때만 방법 B를 쓰세요. GAS 웹앱(Level 2)은 파일 저장이 필요 없어요. Apps Script에 바로 붙여넣기!</div>
+          <div class="start-tip">GAS 웹앱(Level 2)은 파일 저장이 필요 없어요. Apps Script에 바로 붙여넣기!</div>
         </div>
       </div>
     </div>
@@ -1617,7 +1544,7 @@ details[open].practice-card:hover { transform: none; }
   <div class="section-blob" style="background:var(--level2);bottom:-100px;left:-200px;"></div>
   <div class="section-inner">
     <div class="section-header fade-in">
-      <div class="section-label en" style="color:#d4a017;">Level 2</div>
+      <div class="section-label en" style="color:var(--level2);">Level 2</div>
       <h2>프론트+백엔드 웹앱</h2>
       <p>Google Apps Script + 스프레드시트로 데이터를 저장하는 본격 웹앱</p>
     </div>
@@ -1993,76 +1920,20 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
 
     <div class="fade-in">
       <div class="next-group-title en">API 활용</div>
-      <details class="practice-card">
-        <summary>
-          <div class="card-icon level4-icon">&#x1F324;&#xFE0F;</div>
-          <div class="card-info">
-            <div class="card-title">날씨 API로 운동장 체육 알리미</div>
-            <div class="card-desc">실시간 날씨를 확인하고 운동장 체육 가능 여부를 자동 판단</div>
-          </div>
-          <span class="diff-badge mid">API</span>
-          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </summary>
-        <div class="card-body">
-          <div class="prompt-block level4-prompt">
-            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
-            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
-            <div class="prompt-text">하나의 HTML 파일로 "오늘 운동장 체육 가능?" 알리미를 만들어줘.
-무료 날씨 API로 우리 지역의 현재 기온, 강수확률, 미세먼지를 가져와서
-"체육 가능 / 실내 권장 / 불가"를 신호등(초록·노랑·빨강)으로 크게 보여줘.
-비·폭염·한파·미세먼지 나쁨이면 자동으로 경고해줘.
-지역은 "OO시"로 설정해줘.</div>
-          </div>
-          <ol class="steps">
-            <li>claude.ai에 프롬프트 입력</li>
-            <li>날씨 API 키가 필요하면 클로드가 발급 방법을 안내해줘요 (키 발급 후 알려주기)</li>
-            <li>생성된 코드를 저장하고 브라우저에서 확인</li>
-            <li>지역·판단 기준을 우리 학교에 맞게 수정 요청</li>
-          </ol>
-          <div class="customize-box">
-            <h4>커스터마이징 챌린지</h4>
-            <ul>
-              <li>"키 없이 쓸 수 있는 무료 날씨 API로 만들어줘" (예: Open-Meteo)</li>
-              <li>"내일 오전 날씨도 같이 보여줘"</li>
-            </ul>
-          </div>
+      <div class="next-card grad-blue">
+        <div class="next-card-icon">&#x1F324;</div>
+        <div class="next-card-info">
+          <h3>날씨 API로 운동장 체육 알리미</h3>
+          <p>실시간 날씨를 확인하고 운동장 체육 가능 여부를 자동 판단</p>
         </div>
-      </details>
-      <details class="practice-card">
-        <summary>
-          <div class="card-icon level4-icon">&#x1F371;</div>
-          <div class="card-info">
-            <div class="card-title">급식 API(나이스)로 오늘의 급식 앱</div>
-            <div class="card-desc">나이스 교육정보 API를 연동해서 오늘의 급식 메뉴를 보여주는 앱</div>
-          </div>
-          <span class="diff-badge mid">API</span>
-          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </summary>
-        <div class="card-body">
-          <div class="prompt-block level4-prompt">
-            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
-            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
-            <div class="prompt-text">하나의 HTML 파일로 "오늘의 급식" 앱을 만들어줘.
-나이스(NEIS) 교육정보 개방 포털의 급식 식단 API를 연동해서
-우리 학교의 오늘·이번 주 급식 메뉴와 칼로리, 알레르기 정보를 보여줘.
-학교 코드(시도교육청코드, 학교코드)와 인증키는 내가 알려줄게.
-모바일에서 보기 편한 카드형으로 만들어줘.</div>
-          </div>
-          <ol class="steps">
-            <li>나이스 교육정보 개방포털(open.neis.go.kr)에서 <strong>인증키 신청</strong> (무료)</li>
-            <li>우리 학교의 <strong>시도교육청코드·학교코드</strong> 확인</li>
-            <li>claude.ai에 프롬프트 + 코드·인증키 정보 입력</li>
-            <li>생성된 코드를 저장하고 브라우저에서 확인</li>
-          </ol>
-          <div class="customize-box">
-            <h4>꿀팁</h4>
-            <ul>
-              <li>학교코드는 개방포털 "학교기본정보"에서 학교 이름으로 검색하면 나와요</li>
-              <li>"알레르기 정보는 아이콘으로 표시해줘"</li>
-            </ul>
-          </div>
+      </div>
+      <div class="next-card grad-orange">
+        <div class="next-card-icon">&#x1F371;</div>
+        <div class="next-card-info">
+          <h3>급식 API(나이스)로 오늘의 급식 앱</h3>
+          <p>나이스 교육정보 API를 연동해서 오늘의 급식 메뉴를 보여주는 앱</p>
         </div>
-      </details>
+      </div>
       <div class="next-card grad-mint">
         <div class="next-card-icon">&#x1F5FA;</div>
         <div class="next-card-info">
@@ -2072,39 +1943,13 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
       </div>
 
       <div class="next-group-title en">MCP 활용</div>
-      <details class="practice-card">
-        <summary>
-          <div class="card-icon level4-icon">&#x1F4C5;</div>
-          <div class="card-info">
-            <div class="card-title">구글 캘린더 연동 학사일정 관리</div>
-            <div class="card-desc">MCP(커넥터)로 구글 캘린더를 연동해 학사일정을 자동 관리</div>
-          </div>
-          <span class="diff-badge hard">MCP</span>
-          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </summary>
-        <div class="card-body">
-          <div class="prompt-block level4-prompt">
-            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
-            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
-            <div class="prompt-text">구글 캘린더 커넥터를 연결한 상태에서,
-우리 반 학사일정을 관리하고 싶어.
-다가오는 2주 일정을 정리해서 보여주고,
-"다음 주 화요일 5교시 수행평가"를 캘린더에 추가해줘.</div>
-          </div>
-          <ol class="steps">
-            <li>클로드 챗 <strong>설정 > 커넥터(Connectors)</strong>에서 Google Calendar 연결</li>
-            <li>위처럼 자연어로 일정 조회·추가를 요청</li>
-            <li>클로드가 캘린더를 직접 읽고 일정을 추가해줘요</li>
-          </ol>
-          <div class="customize-box">
-            <h4>알아두기</h4>
-            <ul>
-              <li>MCP(커넥터)는 클로드가 외부 서비스를 직접 다루게 해주는 연결 기능이에요</li>
-              <li>한 번 연결해두면 다음부터는 말만 하면 돼요</li>
-            </ul>
-          </div>
+      <div class="next-card grad-purple">
+        <div class="next-card-icon">&#x1F4C5;</div>
+        <div class="next-card-info">
+          <h3>구글 캘린더 연동 학사일정 관리</h3>
+          <p>MCP로 구글 캘린더를 연동해 학사일정을 자동 관리</p>
         </div>
-      </details>
+      </div>
       <div class="next-card grad-pink">
         <div class="next-card-icon">&#x1F4E7;</div>
         <div class="next-card-info">
@@ -2120,11 +1965,11 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
         </div>
       </div>
 
-      <div class="next-group-title en">프로젝트로 작업환경 만들기</div>
+      <div class="next-group-title en">나만의 스킬 만들기</div>
       <div class="next-card grad-mint">
         <div class="next-card-icon">&#x1F4DD;</div>
         <div class="next-card-info">
-          <h3>프로젝트로 나만의 작업환경 저장하기</h3>
+          <h3>프로젝트로 나만의 스킬 저장하기</h3>
           <p>클로드 챗의 "프로젝트" 기능에 커스텀 지시사항을 저장해두면, 매번 같은 설명을 반복하지 않아도 돼요. 예: "나는 중학교 체육교사야. GAS 웹앱을 만들 때 항상 스프레드시트에 저장해줘."</p>
         </div>
       </div>
@@ -2142,77 +1987,6 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
           <p>학생 명단, 학교 로고, 시간표 등 자주 쓰는 파일을 프로젝트에 미리 첨부해두면, 매번 첨부하지 않아도 클로드가 알아서 참고해요</p>
         </div>
       </div>
-
-      <div class="next-group-title en">나만의 스킬(Skills) 만들기</div>
-      <div class="deploy-intro" style="background:linear-gradient(135deg,rgba(123,47,247,0.08),rgba(59,130,246,0.08));border-color:rgba(123,47,247,0.2);margin-bottom:20px;">
-        <strong>스킬(Skills)</strong>은 "특정 작업을 하는 방법"을 클로드에게 미리 가르쳐 패키지로 저장해두는 기능이에요. 한번 만들어두면, 관련된 요청을 할 때 클로드가 <strong>필요할 때 자동으로</strong> 그 스킬을 꺼내 똑같은 방식으로 처리해줘요.<br>
-        프로젝트가 <em>"항상 켜두는 배경지식"</em>이라면, 스킬은 <em>"필요할 때만 자동으로 꺼내 쓰는 도구"</em>예요.
-      </div>
-
-      <details class="practice-card">
-        <summary>
-          <div class="card-icon level4-icon">&#x1F914;</div>
-          <div class="card-info">
-            <div class="card-title">스킬 vs 프로젝트, 뭐가 다를까?</div>
-            <div class="card-desc">헷갈리기 쉬운 두 기능, 한눈에 정리</div>
-          </div>
-          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </summary>
-        <div class="card-body">
-          <div class="customize-box">
-            <h4>&#x1F4C1; 프로젝트 (Projects)</h4>
-            <ul>
-              <li>대화를 시작하면 <strong>항상</strong> 자동으로 켜지는 배경지식</li>
-              <li>공통 지시사항 + 자주 쓰는 파일을 한 공간에 모아둠</li>
-              <li>"항상 적용돼야 하는 내 설정"에 적합</li>
-            </ul>
-          </div>
-          <div class="customize-box" style="margin-top:12px;">
-            <h4>&#x26A1; 스킬 (Skills)</h4>
-            <ul>
-              <li>관련 작업일 때만 <strong>필요할 때 자동으로</strong> 불러옴</li>
-              <li>특정 작업의 '방법·절차'를 패키지로 저장</li>
-              <li>"특정 작업을 늘 같은 방식으로"에 적합</li>
-            </ul>
-          </div>
-          <div class="start-tip" style="margin-top:16px;">클로드 챗엔 이미 <strong>문서 만들기 스킬</strong>(PPT·엑셀·워드·PDF)이 들어있어요. "엑셀로 정리해줘", "PPT로 만들어줘" 하면 진짜 파일을 만들어주는 게 바로 스킬이 작동하는 예시예요.</div>
-        </div>
-      </details>
-
-      <details class="practice-card">
-        <summary>
-          <div class="card-icon level4-icon">&#x1F6E0;&#xFE0F;</div>
-          <div class="card-info">
-            <div class="card-title">나만의 스킬 만들기 (코딩 없이)</div>
-            <div class="card-desc">자주 반복하는 작업을 나만의 스킬로 저장</div>
-          </div>
-          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </summary>
-        <div class="card-body">
-          <div class="prompt-block level4-prompt">
-            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
-            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
-            <div class="prompt-text">내가 자주 하는 작업을 스킬로 만들고 싶어.
-"가정통신문을 만들 때 항상 우리 학교 이름을 넣고, 존댓말로, A4 한 장 분량으로 작성한다"
-이 규칙을 스킬로 만들어줘.</div>
-          </div>
-          <ol class="steps">
-            <li>위처럼 <strong>"스킬 만들어줘"</strong>라고 요청하면, 클로드가 질문을 던지며 스킬을 대신 만들어줘요 (파일 편집·코딩 필요 없음)</li>
-            <li>완성된 스킬을 <strong>ZIP 파일</strong>로 받기</li>
-            <li>클로드 챗 <strong>Customize(커스터마이즈) → Skills(스킬)</strong> 메뉴 열기</li>
-            <li><strong>＋ 버튼 → Create skill</strong>에서 ZIP 파일 업로드</li>
-            <li>끝! 이제 관련 요청을 하면 클로드가 그 스킬을 <strong>자동으로</strong> 사용해요</li>
-          </ol>
-          <div class="customize-box">
-            <h4>스킬 잘 만드는 팁</h4>
-            <ul>
-              <li>핵심은 <strong>설명(description)</strong> — "언제 쓰는 스킬인지"를 명확히 적어야 클로드가 알아서 꺼내 써요</li>
-              <li>예: "학급 가정통신문을 작성할 때 사용"</li>
-              <li>짧고 자주 반복하는 작업부터 시작해보세요</li>
-            </ul>
-          </div>
-        </div>
-      </details>
 
       <div class="next-group-title en">고급 앱</div>
       <div class="next-card grad-dark">
@@ -3187,12 +2961,12 @@ C안: 컬러풀하고 활기찬 느낌
         <div class="deploy-intro">드래그 앤 드롭만으로 배포할 수 있어요. 가장 쉬운 방법! Level 1, Level 3(프론트엔드) 결과물에 적합합니다.</div>
         <ol class="steps">
           <li><strong>Netlify 접속</strong> — netlify.com에 접속해서 <strong>Sign up</strong> 클릭. GitHub 계정으로 로그인하면 편해요</li>
-          <li><strong>폴더 준비</strong> — 클로드 챗에서 받은 코드를 <strong>index.html</strong> 파일로 저장하고, 폴더 하나에 넣어둡니다. (폴더 안에 <strong>index.html</strong>이 꼭 있어야 해요)</li>
-          <li><strong>Add new project</strong> — 로그인하면 보이는 <strong>Projects</strong> 페이지에서 오른쪽 위 <strong>Add new project</strong> 메뉴를 열고 <strong>Deploy manually</strong> 선택. (옛 화면에서는 <strong>Sites</strong> · <strong>Add new site</strong>로 보일 수 있어요)</li>
-          <li><strong>드래그 앤 드롭!</strong> — 화면에 나타나는 <strong>드롭존(Drag and drop your project output folder here)</strong>에 준비한 폴더를 그대로 끌어다 놓으세요</li>
+          <li><strong>Sites 페이지로 이동</strong> — 로그인 후 왼쪽 메뉴에서 <strong>Sites</strong> 클릭</li>
+          <li><strong>폴더 준비</strong> — 클로드 챗에서 받은 코드를 <strong>index.html</strong> 파일로 저장하고, 하나의 폴더에 넣어둡니다</li>
+          <li><strong>드래그 앤 드롭!</strong> — Sites 페이지 하단에 "Want to deploy a new site without connecting to Git? <strong>Drag and drop</strong> your site output folder here" 영역이 보입니다. 여기에 폴더를 그대로 끌어다 놓으세요</li>
           <li><strong>배포 완료!</strong> — 몇 초 후 자동으로 랜덤 주소가 생성됩니다. (예: happy-cat-1234.netlify.app) 클릭하면 내 페이지가 바로 보여요!</li>
         </ol>
-        <div class="deploy-tip">주소를 바꾸고 싶으면? <strong>Project configuration > Change site name</strong>에서 원하는 이름으로 변경할 수 있어요. (예: my-class-app.netlify.app) · 폴더는 50MB 이하, 파일 하나가 10MB를 넘지 않게 하세요.</div>
+        <div class="deploy-tip">주소를 바꾸고 싶으면? Site configuration > Site name에서 원하는 이름으로 변경할 수 있어요. (예: my-class-app.netlify.app)</div>
       </div>
 
       <!-- GAS 배포 탭 -->
@@ -3268,7 +3042,7 @@ C안: 컬러풀하고 활기찬 느낌
 
       <details class="faq-item">
         <summary>무료로 얼마나 쓸 수 있나요?</summary>
-        <div class="faq-answer">claude.ai 무료 플랜에서도 실습하기에 충분한 양을 사용할 수 있어요. 일정 시간마다 메시지 한도가 정해져 있는데, 실습 시간 내에는 넉넉합니다. 만약 한도에 걸리면 잠시 후 다시 시도하세요.</div>
+        <div class="faq-answer">claude.ai 무료 플랜에서도 실습하기에 충분한 양을 사용할 수 있어요. 하루에 대화 횟수 제한이 있는데, 실습 시간 내에는 넉넉합니다. 만약 제한에 걸리면 잠시 후 다시 시도하세요.</div>
       </details>
 
       <details class="faq-item">
@@ -3286,29 +3060,10 @@ C안: 컬러풀하고 활기찬 느낌
 
 <!-- ====== 푸터 ====== -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand en">Kimju<span>.zip</span></div>
-    <div class="footer-tagline">프롬프트 하나로, 나만의 웹앱을 만들어보세요</div>
-
-    <nav class="footer-nav">
-      <a href="#start">시작 준비</a>
-      <a href="#level1">Level 1</a>
-      <a href="#level2">Level 2</a>
-      <a href="#level3">Level 3</a>
-      <a href="#level4">Level 4</a>
-      <a href="#design">디자인 팁</a>
-      <a href="#glossary">용어사전</a>
-      <a href="#deploy">배포 가이드</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-
-    <div class="footer-divider"></div>
-
-    <div class="footer-line">만든 사람: <a href="https://instagram.com/kimju.zip" target="_blank" rel="noopener">@kimju.zip</a> · Powered by Claude</div>
-    <div class="footer-line" style="margin-top:8px;">
-      <a href="https://instagram.com/kimju.zip" target="_blank" rel="noopener">Instagram DM 문의</a>
-    </div>
-    <div class="footer-copy">&copy; 2026 Kimju.zip · 클로드 챗 연수 실습 가이드</div>
+  <div class="footer-line">만든 사람: <a href="https://instagram.com/kimju.zip" target="_blank" rel="noopener">@kimju.zip</a></div>
+  <div class="footer-line" style="margin-top:4px;">Powered by Claude</div>
+  <div class="footer-line" style="margin-top:12px;font-size:0.8rem;opacity:0.5;">
+    <a href="https://instagram.com/kimju.zip" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">Instagram DM</a>
   </div>
 </footer>
 
