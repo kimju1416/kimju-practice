@@ -220,7 +220,7 @@ details[open] .card-chevron{transform:rotate(180deg)}
 .deploy-tabs{margin-top:8px}
 .tab-buttons{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
 .deploy-tabs input[type="radio"]{display:none}
-.tab-label{display:inline-block;padding:10px 22px;border-radius:999px;font-size:.9rem;font-weight:700;cursor:pointer;
+.tab-label{display:inline-block;padding:12px 26px;border-radius:999px;font-size:1.02rem;font-weight:700;cursor:pointer;
   background:rgba(43,38,34,.05);color:var(--ink2);transition:.2s;user-select:none}
 .tab-label:hover{background:var(--clay-soft);color:var(--clay-dark)}
 #tab-gh:checked~.tab-buttons label[for="tab-gh"],
@@ -327,11 +327,16 @@ details[open] .card-chevron{transform:rotate(180deg)}
 .faq-answer{padding:0 22px 20px;font-size:.94rem;color:var(--ink-soft);line-height:1.8}
 
 /* 푸터 */
-.footer{text-align:center;padding:46px 40px;background:var(--code-bg);color:rgba(243,237,231,.6);font-size:.9rem;
-  border-top:1px solid var(--line)}
-.footer a{color:#A8D5B5;font-weight:600}
-.footer a:hover{text-decoration:underline}
+.footer{border-top:1px solid var(--line);padding:40px;text-align:center;color:var(--ink-soft);font-size:13.5px;background:var(--bg2)}
+.footer a{color:var(--blue);border-bottom:1px solid rgba(47,111,176,.4)}
 .footer-line{margin:6px 0}
+.footer-line b{color:var(--clay-dark)}
+.insta{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 16px;
+  border:1px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;
+  color:var(--ink);font-size:13px;font-weight:600;transition:.15s}
+.insta:hover{background:var(--clay-soft);border-color:var(--clay);color:var(--clay-dark)}
+.insta svg{width:18px;height:18px;flex:none}
+.insta .at{color:var(--ink-soft);font-weight:500}
 
 /* kbd / 보조 */
 kbd{background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:2px 7px;
@@ -379,7 +384,7 @@ kbd{background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-
   .card-body{padding:0 15px 15px;padding-top:15px}
   .prompt-text{font-size:.8rem}
   .next-card{padding:18px 18px;gap:13px}
-  .tab-label{padding:8px 16px;font-size:.85rem}
+  .tab-label{padding:10px 18px;font-size:.95rem}
   .diff-badge{display:none}
 }
 @media(max-width:400px){.style-grid{grid-template-columns:1fr}}
@@ -404,7 +409,7 @@ kbd{background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-
       <div><b>연수 실습 가이드</b><span>클로드 챗으로 웹앱 만들기</span></div>
     </div>
     <nav class="toc">
-      <a href="#start" data-nav><span class="num">·</span>시작 준비</a>
+      <a href="#start" data-nav><span class="num">🚀</span>시작 준비</a>
       <a href="#level1" data-nav><span class="num">1</span>프론트엔드 Only</a>
       <a href="#level2" data-nav><span class="num">2</span>프론트+백엔드</a>
       <a href="#level3" data-nav><span class="num">3</span>실전 프로젝트</a>
@@ -449,7 +454,7 @@ kbd{background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-
   <div class="section-inner">
     <div class="section-header fade-in">
       <div class="section-label en" style="color:var(--accent1);">Getting Started</div>
-      <h2>시작 전 준비</h2>
+      <h2>🚀 시작 전 준비</h2>
       <p>실습을 시작하기 전에 이것만 알면 돼요</p>
     </div>
 
@@ -2234,11 +2239,16 @@ C안: 컬러풀하고 활기찬 느낌
 
 <!-- ====== 푸터 ====== -->
 <footer class="footer">
-  <div class="footer-line">만든 사람: <a href="https://instagram.com/kimju.zip" target="_blank" rel="noopener">@kimju.zip</a></div>
-  <div class="footer-line" style="margin-top:4px;">Powered by Claude</div>
-  <div class="footer-line" style="margin-top:12px;font-size:0.8rem;opacity:0.5;">
-    <a href="https://instagram.com/kimju.zip" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">Instagram DM</a>
-  </div>
+  <div class="footer-line"><b>클로드 챗 연수 실습 가이드</b> · 비전공 교사용 · Level 1~4 단계별 실습</div>
+  <div class="footer-line" style="margin-top:6px;font-size:12px;opacity:.85">함께 보기 — <a href="https://kimju1416.github.io/claude-code-desktop-manual/" target="_blank" rel="noopener">클로드 코드 데스크탑 시작 메뉴얼</a> · Powered by Claude</div>
+  <a class="insta" href="https://www.instagram.com/kimju.zip" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="#C45D3A" stroke-width="1.8"/>
+      <circle cx="12" cy="12" r="4.2" stroke="#C45D3A" stroke-width="1.8"/>
+      <circle cx="17.4" cy="6.6" r="1.2" fill="#C45D3A"/>
+    </svg>
+    <span class="at">@</span>kimju.zip
+  </a>
 </footer>
 
 
