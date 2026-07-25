@@ -25,7 +25,7 @@
 
   --primary:#D97757; --secondary:#C45D3A;
   --accent1:#3F8F6B; --accent2:#B8742A; --accent3:#D4975A; --accent4:#2F6FB0;
-  --level1:#3F8F6B; --level2:#B8742A; --level3:#D97757; --level4:#2F6FB0;
+  --level1:#3F8F6B; --level2:#B8742A; --level3:#D97757; --level4:#2F6FB0; --level5:#0E7C7B;
   --diff-easy:#3F8F6B; --diff-mid:#B8742A; --diff-hard:#D97757;
 
   --radius:18px;
@@ -143,6 +143,7 @@ details[open] .card-chevron{transform:rotate(180deg)}
 .level2-icon{background:rgba(184,116,42,.1)}
 .level3-icon{background:rgba(217,119,87,.1)}
 .level4-icon{background:rgba(47,111,176,.1)}
+.level5-icon{background:rgba(14,124,123,.1)}
 
 /* 프롬프트 블록 */
 .prompt-block{position:relative;border-radius:14px;padding:18px 20px;margin:14px 0;overflow:hidden;
@@ -185,6 +186,24 @@ details[open] .card-chevron{transform:rotate(180deg)}
 .start-content h3{font-size:1.05rem;font-weight:800;margin-bottom:10px}
 .start-tip{margin-top:12px;padding:10px 14px;border-radius:10px;background:var(--warn-soft);
   border-left:3px solid var(--warn);font-size:.85rem;color:var(--ink);line-height:1.6}
+
+/* Level5 — 코워크 실습 파일 다운로드 */
+.dl-box{display:flex;align-items:center;gap:14px;background:rgba(14,124,123,0.06);border:1px solid rgba(14,124,123,0.18);
+  border-radius:12px;padding:14px 16px;margin:12px 0}
+.dl-box .dl-icon{flex-shrink:0;width:38px;height:38px;border-radius:10px;background:var(--level5);color:#fff;
+  display:flex;align-items:center;justify-content:center}
+.dl-box .dl-icon svg{width:19px;height:19px}
+.dl-box .dl-info{flex:1;min-width:0}
+.dl-box .dl-info b{display:block;font-size:.9rem;color:var(--ink)}
+.dl-box .dl-info span{display:block;font-size:.78rem;color:var(--ink-soft);margin-top:2px}
+.dl-btn{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;background:var(--level5);color:#fff;
+  font-weight:700;font-size:.85rem;padding:9px 14px;border-radius:9px;text-decoration:none;transition:.15s;white-space:nowrap}
+.dl-btn:hover{opacity:.85}
+.dl-btn svg{width:15px;height:15px}
+@media(max-width:520px){
+  .dl-box{flex-wrap:wrap}
+  .dl-btn{width:100%;justify-content:center}
+}
 
 /* 터미널 블록 */
 .terminal-block{background:#2B2622;border-radius:14px;overflow:hidden;margin:16px 0;box-shadow:var(--shadow)}
@@ -738,6 +757,7 @@ kbd{background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-
       <a href="#level2" data-nav><span class="num">2</span>프론트+백엔드</a>
       <a href="#level3" data-nav><span class="num">3</span>실전 프로젝트</a>
       <a href="#level4" data-nav><span class="num">4</span>Next Step</a>
+      <a href="#level5" data-nav><span class="num">5</span>Cowork 실습</a>
       <a href="#design" data-nav><span class="num">·</span>디자인 팁</a>
       <a href="#glossary" data-nav><span class="num">·</span>용어사전</a>
       <a href="#deploy" data-nav><span class="num">·</span>배포 가이드</a>
@@ -2144,6 +2164,207 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ====== Level 5: 클로드 코워크 실습하기 ====== -->
+<section class="section" id="level5">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-label en" style="color:var(--level5);">Level 5</div>
+      <h2>클로드 코워크 실습하기</h2>
+      <p>진짜 예시 파일을 다운로드해서, 코워크에게 직접 일을 맡겨보는 실습이에요</p>
+    </div>
+
+    <div class="note tip">
+      <span class="ic">🤝</span>
+      <div><b>코워크가 처음이라면</b><p>Cowork은 "대화 한 번 → 답 하나"가 아니라, 폴더 하나를 통째로 맡기면 클로드가 파일을 직접 열어보고·만들고·정리까지 해주는 모드예요. 개념이 궁금하면 <a class="link" href="#level4" onclick="document.getElementById('level4').scrollIntoView({behavior:'smooth'})">Level 4의 "Cowork" 카드</a>를 먼저 봐도 좋아요. Max 요금제부터 베타로 제공돼요.</p></div>
+    </div>
+
+    <div class="note warn">
+      <span class="ic">📁</span>
+      <div><b>실습 전에 이렇게 준비하세요</b><p>① 아래에서 필요한 예시 파일을 다운로드 → ② 압축파일(zip)은 압축을 풀어서 <strong>"코워크실습"</strong> 같은 새 폴더 하나에 모아두기 → ③ Cowork을 열고 그 폴더를 통째로 선택 → ④ 아래 프롬프트를 그대로 말해보기. <strong>전부 가상 인물·가상 데이터</strong>라 안심하고 연습해도 돼요. 실제 학생 자료로 연습할 땐 개인정보 취급에 유의하세요.</p></div>
+    </div>
+
+    <!-- 실습 1: 성적 리포트 -->
+    <details class="practice-card">
+      <summary>
+        <div class="card-icon level5-icon">📊</div>
+        <div class="card-info">
+          <div class="card-title">학급 성적 리포트 자동으로 만들기 (실습)</div>
+          <div class="card-desc">엑셀 성적 파일을 통째로 넘기면, 코워크가 알아서 분석해서 문서로 정리해줘요</div>
+        </div>
+        <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="dl-box">
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
+          <div class="dl-info"><b>3학년2반_1학기_성적.xlsx</b><span>가상 학생 20명 · 국영수사과 5과목 점수 (약 6KB)</span></div>
+          <a class="dl-btn" href="samples/3학년2반_1학기_성적.xlsx" download>다운로드</a>
+        </div>
+        <ol class="steps">
+          <li>위 파일을 다운로드해서 "코워크실습" 폴더에 넣는다</li>
+          <li>Cowork에서 그 폴더를 열고 아래 프롬프트를 그대로 말한다</li>
+          <li>완성된 문서를 열어 실제로 학급 평균·상위권/보완필요 학생이 정확히 짚였는지 확인한다</li>
+        </ol>
+        <div class="prompt-block level4-prompt">
+          <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+          <div class="prompt-label">💬 이렇게 말해보세요</div>
+          <div class="prompt-text">이 폴더에 있는 "3학년2반_1학기_성적.xlsx" 파일을 분석해서 학급 성적 리포트를 워드 문서로 만들어줘.
+학급 전체 평균, 과목별 평균과 최고·최저 점수, 평균 상위 5명과 보완이 필요한 5명을 정리해줘.
+개인정보 보호를 위해 리포트에는 학생 이름 대신 "번호"만 써줘.</div>
+        </div>
+        <div class="customize-box">
+          <h4>커스터마이징 챌린지</h4>
+          <ul>
+            <li>"과목별 점수 분포를 막대그래프 이미지로도 넣어줘"</li>
+            <li>"지난 학기 평균과 비교하는 문단도 추가해줘" (가상 지난학기 점수를 불러줘도 좋아요)</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+
+    <!-- 실습 2: 개인 성적표 -->
+    <details class="practice-card">
+      <summary>
+        <div class="card-icon level5-icon">🧑‍🎓</div>
+        <div class="card-info">
+          <div class="card-title">학생 개인 성적표 + 상담 자료 만들기 (실습)</div>
+          <div class="card-desc">같은 성적 파일로, 학부모 상담에 바로 쓸 수 있는 개인별 문서를 뽑아봐요</div>
+        </div>
+        <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="dl-box">
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
+          <div class="dl-info"><b>3학년2반_1학기_성적.xlsx</b><span>실습 1과 같은 파일이에요 (이미 받았으면 다시 안 받아도 돼요)</span></div>
+          <a class="dl-btn" href="samples/3학년2반_1학기_성적.xlsx" download>다운로드</a>
+        </div>
+        <ol class="steps">
+          <li>실습 1과 같은 폴더를 그대로 이어서 사용한다</li>
+          <li>아래 프롬프트로 특정 학생 1명의 개인 리포트를 요청한다</li>
+          <li>"이번엔 3번 학생으로 다시 만들어줘"처럼 대상을 바꿔가며 여러 번 반복해본다</li>
+        </ol>
+        <div class="prompt-block level4-prompt">
+          <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+          <div class="prompt-label">💬 이렇게 말해보세요</div>
+          <div class="prompt-text">"3학년2반_1학기_성적.xlsx"를 참고해서 1번 학생의 개인 성적표를 만들어줘.
+이번 학기 5과목 점수와 학급 평균을 비교하는 표를 넣고,
+상대적으로 강한 과목과 보완이 필요한 과목을 짚어주는 코멘트를 써줘.
+학부모 상담 때 그대로 보여줄 수 있게 정중한 문서 형태로 만들어줘.</div>
+        </div>
+        <div class="start-tip">실제 학생 자료로 실습할 땐, 상담용 문서라도 초안은 반드시 교사가 먼저 검토한 뒤 사용하세요 — 코워크가 만든 코멘트를 그대로 전달하지 마세요.</div>
+      </div>
+    </details>
+
+    <!-- 실습 3: 영수증 정리 -->
+    <details class="practice-card">
+      <summary>
+        <div class="card-icon level5-icon">🧾</div>
+        <div class="card-info">
+          <div class="card-title">여러 영수증 파일 정리해서 정산표 만들기 (실습)</div>
+          <div class="card-desc">따로따로 흩어진 영수증 파일 6장을 한 번에 읽어서 정산 엑셀로 정리해요</div>
+        </div>
+        <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="dl-box">
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
+          <div class="dl-info"><b>영수증모음.zip</b><span>학급운영비 영수증 텍스트 파일 6장 (약 2KB)</span></div>
+          <a class="dl-btn" href="samples/영수증모음.zip" download>다운로드</a>
+        </div>
+        <ol class="steps">
+          <li>zip을 다운로드해서 압축을 풀고, 그 폴더 전체를 Cowork에 연다</li>
+          <li>아래 프롬프트로 영수증 6장을 한 번에 정리해달라고 요청한다</li>
+          <li>완성된 정산표의 합계가 실제 영수증 6장 금액 합과 맞는지 확인한다</li>
+        </ol>
+        <div class="prompt-block level4-prompt">
+          <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+          <div class="prompt-label">💬 이렇게 말해보세요</div>
+          <div class="prompt-text">이 폴더 안의 영수증 파일 6개를 전부 읽어서, 날짜순으로 정리한 학급운영비 정산표를 엑셀로 만들어줘.
+상호명, 날짜, 구입 항목, 금액 열로 정리하고, 맨 아래에 전체 합계를 넣어줘.</div>
+        </div>
+        <div class="customize-box">
+          <h4>커스터마이징 챌린지</h4>
+          <ul>
+            <li>"항목을 문구류/인쇄/간식으로 카테고리 나눠서 소계도 보여줘"</li>
+            <li>"학교에 제출할 정산 결의서 양식으로도 하나 만들어줘"</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+
+    <!-- 실습 4: 사진 파일 정리 -->
+    <details class="practice-card">
+      <summary>
+        <div class="card-icon level5-icon">🖼️</div>
+        <div class="card-info">
+          <div class="card-title">학생 사진 파일 이름 한 번에 정리하기 (실습)</div>
+          <div class="card-desc">IMG_0001.jpg 식으로 뒤섞인 사진 20장을, 출석부를 참고해서 "번호_이름"으로 한 번에 바꿔요</div>
+        </div>
+        <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="dl-box">
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
+          <div class="dl-info"><b>학생사진_정리전.zip</b><span>더미 사진 20장 (IMG_0001~0020.jpg, 약 210KB)</span></div>
+          <a class="dl-btn" href="samples/학생사진_정리전.zip" download>다운로드</a>
+        </div>
+        <div class="dl-box">
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
+          <div class="dl-info"><b>출석부.xlsx</b><span>사진파일명 ↔ 출석번호·이름 매칭표 (약 6KB)</span></div>
+          <a class="dl-btn" href="samples/출석부.xlsx" download>다운로드</a>
+        </div>
+        <ol class="steps">
+          <li>사진 zip의 압축을 풀고, 출석부.xlsx와 같은 폴더에 넣는다 (사진 20장 + 엑셀 1개가 한 폴더에 있어야 함)</li>
+          <li>Cowork에서 그 폴더를 열고 아래 프롬프트를 말한다</li>
+          <li>파일명이 실제로 "01_김민준.jpg" 형식으로 전부 바뀌었는지 폴더에서 확인한다</li>
+        </ol>
+        <div class="prompt-block level4-prompt">
+          <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+          <div class="prompt-label">💬 이렇게 말해보세요</div>
+          <div class="prompt-text">이 폴더의 사진 파일들 이름을, 같은 폴더의 "출석부.xlsx"에 있는
+사진파일명↔출석번호↔이름 매칭 정보를 참고해서 "출석번호_이름.jpg" 형식으로 전부 바꿔줘.
+예를 들어 매칭표에서 IMG_0008.jpg가 1번 김민준이면, 그 사진을 "01_김민준.jpg"로 바꾸면 돼.
+번호는 항상 두 자리(01, 02...)로 맞춰줘.</div>
+        </div>
+        <div class="start-tip">사진처럼 보이는 파일 20장은 전부 얼굴 없는 더미 이미지예요(실제 사진 아님). 실제 학생 사진으로 연습할 땐, 파일이 학교 공용 계정이 아닌 안전한 폴더에만 있는지 먼저 확인하세요.</div>
+      </div>
+    </details>
+
+    <!-- 실습 5: 생활기록부 종합의견 -->
+    <details class="practice-card">
+      <summary>
+        <div class="card-icon level5-icon">📝</div>
+        <div class="card-info">
+          <div class="card-title">학기말 종합의견 초안 만들기 (실습)</div>
+          <div class="card-desc">한 학기 동안 쌓인 관찰 기록을 학생별로 모아서, 생기부 문체에 맞는 초안을 뽑아요</div>
+        </div>
+        <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="dl-box">
+          <div class="dl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
+          <div class="dl-info"><b>학생관찰기록.xlsx</b><span>가상 학생 20명 · 학기 중 관찰 메모 약 56건 (약 7KB)</span></div>
+          <a class="dl-btn" href="samples/학생관찰기록.xlsx" download>다운로드</a>
+        </div>
+        <ol class="steps">
+          <li>파일을 다운로드해서 "코워크실습" 폴더에 넣는다</li>
+          <li>Cowork에서 폴더를 열고 아래 프롬프트를 말한다</li>
+          <li>학생 1~2명만 골라 실제 나이스 기재 문체(명사형 종결)로 잘 나왔는지 확인한다</li>
+        </ol>
+        <div class="prompt-block level4-prompt">
+          <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+          <div class="prompt-label">💬 이렇게 말해보세요</div>
+          <div class="prompt-text">"학생관찰기록.xlsx"를 참고해서, 학생별로 한 학기 동안의 관찰 기록을 종합한
+생활기록부 "행동특성 및 종합의견" 초안을 각각 3~4문장으로 작성해줘.
+나이스(NEIS) 기재 요령에 맞게 "~함", "~보임"처럼 명사형으로 끝나는 문체로 써주고,
+워드 문서 하나에 학생별로 나눠서 정리해줘.</div>
+        </div>
+        <div class="start-tip"><strong>반드시 초안일 뿐이에요.</strong> 코워크가 만든 문장은 실제 관찰과 다르거나 과장될 수 있어서, 담임교사가 한 명 한 명 직접 검토·수정한 뒤에만 실제 생기부에 반영해야 해요.</div>
+      </div>
+    </details>
+
   </div>
 </section>
 
