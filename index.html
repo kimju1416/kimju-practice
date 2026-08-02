@@ -25,7 +25,7 @@
 
   --primary:#D97757; --secondary:#C45D3A;
   --accent1:#3F8F6B; --accent2:#B8742A; --accent3:#D4975A; --accent4:#2F6FB0;
-  --level1:#3F8F6B; --level2:#B8742A; --level3:#D97757; --level4:#2F6FB0; --level5:#0E7C7B;
+  --level1:#3F8F6B; --level2:#B8742A; --level3:#D97757; --level4:#2F6FB0; --level5:#0E7C7B; --level6:#A34E63;
   --diff-easy:#3F8F6B; --diff-mid:#B8742A; --diff-hard:#D97757;
 
   --radius:18px;
@@ -144,6 +144,7 @@ details[open] .card-chevron{transform:rotate(180deg)}
 .level3-icon{background:rgba(217,119,87,.1)}
 .level4-icon{background:rgba(47,111,176,.1)}
 .level5-icon{background:rgba(14,124,123,.1)}
+.level6-icon{background:rgba(163,78,99,.1)}
 
 /* 프롬프트 블록 */
 .prompt-block{position:relative;border-radius:14px;padding:18px 20px;margin:14px 0;overflow:hidden;
@@ -153,6 +154,7 @@ details[open] .card-chevron{transform:rotate(180deg)}
 .level2-prompt{background:rgba(184,116,42,.07);border-color:rgba(184,116,42,.18)}
 .level3-prompt{background:rgba(217,119,87,.08);border-color:rgba(217,119,87,.2)}
 .level4-prompt{background:rgba(47,111,176,.07);border-color:rgba(47,111,176,.18)}
+.level6-prompt{background:rgba(163,78,99,.06);border-color:rgba(163,78,99,.18)}
 .design-prompt{background:var(--clay-soft)!important;border-color:rgba(217,119,87,.2)!important}
 .prompt-label{font-size:.85rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;color:var(--clay-dark)}
 .prompt-text{font-family:'JetBrains Mono',monospace;font-size:.86rem;line-height:1.8;color:var(--ink);white-space:pre-wrap;word-break:break-word}
@@ -174,6 +176,28 @@ details[open] .card-chevron{transform:rotate(180deg)}
 .customize-box ul{list-style:none;padding:0}
 .customize-box li{font-size:.86rem;color:var(--ink-soft);padding:4px 0 4px 18px;position:relative}
 .customize-box li::before{content:'·';position:absolute;left:3px;color:var(--clay);font-weight:800}
+
+/* 안내 박스 (note) */
+.note{display:flex;gap:14px;align-items:flex-start;padding:17px 20px;border-radius:14px;margin:18px 0;
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.note .ic{flex:0 0 34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-size:1.02rem;background:var(--bg2)}
+.note>div{flex:1;min-width:0}
+.note b{display:block;font-size:.95rem;font-weight:800;margin-bottom:5px;color:var(--ink)}
+.note p{font-size:.9rem;line-height:1.72;color:var(--ink-soft);margin:0}
+.note p+p{margin-top:8px}
+.note code{background:var(--clay-soft);color:var(--clay-dark);padding:1px 6px;border-radius:5px;font-size:.84em}
+.note.tip{background:rgba(63,143,107,.055);border-color:rgba(63,143,107,.2)}
+.note.tip .ic{background:rgba(63,143,107,.13)}
+.note.tip b{color:#2D7A58}
+.note.warn{background:rgba(217,119,87,.06);border-color:rgba(217,119,87,.22)}
+.note.warn .ic{background:rgba(217,119,87,.14)}
+.note.warn b{color:var(--clay-dark)}
+.note.info{background:rgba(47,111,176,.055);border-color:rgba(47,111,176,.2)}
+.note.info .ic{background:rgba(47,111,176,.13)}
+.note.info b{color:var(--blue)}
+.link{color:var(--clay-dark);font-weight:700;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.link:hover{color:var(--clay)}
 
 /* 시작 준비 그리드 */
 .start-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -758,6 +782,7 @@ kbd{background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-
       <a href="#level3" data-nav><span class="num">3</span>실전 프로젝트</a>
       <a href="#level4" data-nav><span class="num">4</span>Next Step</a>
       <a href="#level5" data-nav><span class="num">5</span>Cowork 실습</a>
+      <a href="#special" data-nav><span class="num">✦</span>특수교사 실습</a>
       <a href="#design" data-nav><span class="num">·</span>디자인 팁</a>
       <a href="#glossary" data-nav><span class="num">·</span>용어사전</a>
       <a href="#deploy" data-nav><span class="num">·</span>배포 가이드</a>
@@ -2552,6 +2577,620 @@ Code.gs 파일과 index.html 파일로 나눠서 만들어줘.</div>
 
   </div>
 </section>
+
+<!-- ====== 특수교사 실습 ====== -->
+<section class="section" id="special" style="background:var(--bg3);">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-label en" style="color:var(--level6);">For Special Education</div>
+      <h2>✦ 특수교사 실습</h2>
+      <p>학생이 직접 만지는 화면부터, 기록이 데이터가 되는 앱까지 — 특수교육 현장에 맞춘 12가지</p>
+    </div>
+
+    <div class="note tip">
+      <span class="ic">✦</span>
+      <div><b>왜 특수교육에서 바이브코딩인가</b><p>특수학급은 학생마다 필요한 게 다릅니다. 그래서 <strong>시중 앱이 잘 안 맞아요</strong> — 칸이 너무 많거나, 글자가 작거나, 필요 없는 기능이 붙어 있죠. 바이브코딩의 진짜 강점이 여기 있습니다. <strong>그 학생에게만 맞는 화면</strong>을 10분 만에 만들고, 다음 학생용으로 복사해서 고치면 됩니다. 아래 실습은 대부분 <strong>파일 하나</strong>로 끝나서 설치도, 계정도 필요 없어요.</p></div>
+    </div>
+
+    <div class="note warn">
+      <span class="ic">🔒</span>
+      <div><b>시작 전에 — 이름 대신 번호로</b><p>행동 기록·관찰 기록은 학교 자료 중에서도 특히 민감합니다. 실습은 물론 실제 사용에서도 <strong>학생 실명을 넣지 마세요.</strong> 번호나 이니셜(1번, 2번 / A, B)로 만들면 기능은 똑같고 위험만 사라집니다. 클로드에게 프롬프트를 줄 때도 실제 학생 정보는 넣지 않습니다.</p></div>
+    </div>
+
+    <div class="note info">
+      <span class="ic">🖥️</span>
+      <div><b>먼저 완성본을 보고 시작하세요 — 키오스크 연습장</b><p>아래 실습으로 어디까지 만들 수 있는지, <a class="link" href="https://kimju1416.github.io/kiosk-practice/" target="_blank" rel="noopener">키오스크 연습장</a>을 먼저 열어보세요. 가게 3곳 · 난이도 3단계 · 과제 자동채점 · 수행기록까지 들어 있는 <b>단일 HTML 파일 하나</b>입니다. 그대로 수업에 쓰셔도 되고, 아래 실습으로 <b>우리 반 것</b>을 직접 만들어도 됩니다.</p></div>
+    </div>
+
+    <!-- ========== 입문 ========== -->
+    <div class="diff-group diff-easy fade-in">
+      <div class="diff-group-label">입문 — 파일 하나로 끝, 저장 없음</div>
+
+      <!-- 1. 그림 일과표 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F5D3;&#xFE0F;</div>
+          <div class="card-info">
+            <div class="card-title">그림 일과표</div>
+            <div class="card-desc">오늘 순서를 큰 그림 카드로. 끝난 일은 눌러서 체크</div>
+          </div>
+          <span class="diff-badge easy">입문</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">특수학급에서 쓸 그림 일과표를 하나의 HTML 파일로 만들어줘.
+오늘 할 일 6개를 큰 카드로 세로로 보여주고, 카드마다 큰 이모지 그림과 짧은 한글 낱말을 함께 넣어줘.
+카드를 누르면 체크 표시가 생기고 흐리게 바뀌어서 '끝난 일'이 되게 해줘.
+지금 해야 할 일 카드는 테두리를 굵게 강조해줘.
+글자는 아주 크게, 카드도 손가락으로 누르기 쉽게 크게 만들어줘.
+일과는 등교·아침활동·1교시·점심·양치·하교로 예시를 넣어줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai 접속 후 로그인</li>
+            <li>프롬프트 복사해서 입력</li>
+            <li>아티팩트 미리보기 확인 → 다운로드</li>
+            <li>태블릿에 옮겨 열어보고, 학생 반응을 보며 수정 요청</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"카드 순서를 드래그로 바꿀 수 있게 해줘"</li>
+              <li>"전체 초기화 버튼을 오른쪽 위에 작게 넣어줘"</li>
+              <li>"카드를 누르면 낱말을 소리로 읽어줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- 2. 선택 보드 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F50A;</div>
+          <div class="card-info">
+            <div class="card-title">선택 보드 (누르면 소리로)</div>
+            <div class="card-desc">"물 주세요 / 화장실 / 도와주세요 / 아파요" — 누르면 말이 나와요</div>
+          </div>
+          <span class="diff-badge easy">입문</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">말로 표현하기 어려운 학생이 쓸 의사소통 선택 보드를 하나의 HTML 파일로 만들어줘.
+화면을 4칸으로 나누고 칸마다 큰 이모지와 낱말을 넣어줘.
+칸은 '물 주세요 / 화장실 / 도와주세요 / 아파요'로 해줘.
+칸을 누르면 브라우저 음성 합성(speechSynthesis)으로 그 말을 한국어로 소리내 읽어줘.
+누를 때 칸이 커지고 색이 바뀌어서 눌린 게 눈으로 보이게 해줘.
+글자와 그림은 아주 크게, 배경은 눈이 편한 색으로 해줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai 접속 후 로그인</li>
+            <li>프롬프트 복사해서 입력</li>
+            <li>아티팩트 미리보기에서 <strong>칸을 눌러 소리가 나는지</strong> 확인</li>
+            <li>다운로드해서 학생이 쓸 기기에서 다시 확인</li>
+          </ol>
+          <div class="note warn" style="margin-top:14px">
+            <span class="ic">&#x1F509;</span>
+            <div><b>소리가 안 나면</b><p>기기가 무음이거나, 브라우저가 첫 터치 전에는 소리를 막는 경우예요. 화면을 한 번 누른 뒤 다시 시도해보고, 그래도 안 되면 클로드에게 <strong>"첫 화면에 '시작하기' 버튼을 넣고 그걸 누른 뒤부터 소리가 나게 해줘"</strong> 라고 요청하세요.</p></div>
+          </div>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"칸을 6개로 늘리고 '배고파요', '쉬고 싶어요'를 추가해줘"</li>
+              <li>"목소리 속도를 조금 느리게 해줘"</li>
+              <li>"누른 말이 화면 위에 큰 글씨로 남게 해줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- 3. 시각적 타이머 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x23F3;</div>
+          <div class="card-info">
+            <div class="card-title">시각적 타이머</div>
+            <div class="card-desc">남은 시간이 원으로 줄어드는 타임타이머 — 시중 제품 대신</div>
+          </div>
+          <span class="diff-badge easy">입문</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">특수학급에서 쓸 시각적 타이머를 하나의 HTML 파일로 만들어줘.
+남은 시간이 원형으로 줄어드는 타임타이머 방식으로 해줘.
+1분·3분·5분·10분 버튼을 크게 만들어서 누르면 바로 시작되게 해줘.
+남은 시간은 원 가운데에 숫자로도 크게 보여줘.
+시간이 끝나면 화면이 부드럽게 깜빡이고 소리로 알려줘.
+멈춤과 다시 시작 버튼도 크게 넣어줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai 접속 후 로그인</li>
+            <li>프롬프트 복사해서 입력</li>
+            <li>아티팩트에서 1분으로 눌러 <strong>끝까지 돌려보기</strong></li>
+            <li>다운로드 → 교실 TV나 태블릿에 띄워 사용</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"남은 시간이 1분 이하가 되면 원 색을 주황으로 바꿔줘"</li>
+              <li>"끝났을 때 소리를 종소리로 바꿔줘"</li>
+              <li>"전체화면 버튼을 넣어줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- 4. 감정 체크인 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F60A;</div>
+          <div class="card-info">
+            <div class="card-title">감정 체크인 카드</div>
+            <div class="card-desc">아침마다 얼굴 그림으로 오늘 기분 고르기</div>
+          </div>
+          <span class="diff-badge easy">입문</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">아침마다 학생이 자기 기분을 고르는 감정 체크인 화면을 하나의 HTML 파일로 만들어줘.
+얼굴 이모지 5개(아주 좋음·좋음·보통·힘듦·많이 힘듦)를 큰 버튼으로 한 줄에 보여줘.
+하나를 고르면 '오늘 기분: OO' 하고 크게 표시하고, 따뜻한 한마디를 함께 보여줘.
+고른 기분에 따라 배경색이 부드럽게 바뀌게 해줘.
+버튼과 글자는 아주 크게 만들어줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai 접속 후 로그인</li>
+            <li>프롬프트 복사해서 입력</li>
+            <li>아티팩트 미리보기 확인 → 다운로드</li>
+            <li>아침 활동 시간에 띄워두고 학생이 직접 누르게 하기</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"힘듦·많이 힘듦을 고르면 '선생님께 말해볼까요?' 버튼이 나오게 해줘"</li>
+              <li>"고른 기분을 소리로 읽어줘"</li>
+              <li>"학생 번호를 먼저 고르고 기분을 고르게 해줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ========== 활용 ========== -->
+    <div class="diff-group diff-mid fade-in">
+      <div class="diff-group-label">활용 — 브라우저에 저장돼서 다시 열어도 남아요</div>
+
+      <!-- 키오스크 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F5A5;&#xFE0F;</div>
+          <div class="card-info">
+            <div class="card-title">키오스크 주문 연습</div>
+            <div class="card-desc">주문 순서를 화면 그대로 — 전환교육에 바로 쓰는 실습</div>
+          </div>
+          <span class="diff-badge mid">활용</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">특수학급 학생이 키오스크 주문을 연습하는 웹앱을 하나의 HTML 파일로 만들어줘.
+햄버거 가게 화면이고, 순서는 매장/포장 고르기 → 메뉴 고르기 → 수량 고르기 → 담은 것 확인 → 카드 결제 → 주문번호 나오기야.
+메뉴는 큰 카드로 그림과 이름, 가격을 함께 보여주고 누르면 다음 단계로 넘어가게 해줘.
+화면마다 지금 무엇을 해야 하는지 한 문장으로 크게 알려주고, 한국어 음성으로도 읽어줘(speechSynthesis).
+잘못 눌렀을 때 돌아갈 수 있게 '뒤로' 버튼을 항상 넣어줘.
+글자와 버튼은 아주 크게, 태블릿에서 쓰기 좋게 만들어줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai 접속 후 로그인 → 프롬프트 입력</li>
+            <li>아티팩트에서 <strong>주문을 끝까지 한 번</strong> 해보기</li>
+            <li>막히는 화면이 있으면 그 화면만 고쳐 달라고 이어서 말하기</li>
+            <li>다운로드 → 태블릿을 세워두고 학생과 함께 해보기</li>
+          </ol>
+          <div class="note tip" style="margin-top:14px">
+            <span class="ic">&#x1F3AF;</span>
+            <div><b>왜 이 실습이 특별한가</b><p>키오스크 이용은 <b>지역사회 적응·전환교육의 핵심 기술</b>입니다. 실제 매장에서 연습하려면 시간·비용·대기 부담이 크지만, 화면으로는 <b>몇 번이든 반복</b>할 수 있어요. 실수해도 안전하고, 학생 속도에 맞출 수 있습니다.</p></div>
+          </div>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"메뉴를 3개만 나오게 해서 더 쉽게 해줘"</li>
+              <li>"'감자튀김과 콜라를 사세요' 같은 과제를 주고, 맞게 샀는지 채점해줘"</li>
+              <li>"카페 메뉴로 바꾸고 얼음 옵션을 넣어줘"</li>
+              <li>"몇 번 만에 성공했는지 기록해서 보여줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- 5. 토큰 보드 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F39F;&#xFE0F;</div>
+          <div class="card-info">
+            <div class="card-title">토큰 보드</div>
+            <div class="card-desc">별을 채우고, 목표에 닿으면 축하 화면</div>
+          </div>
+          <span class="diff-badge mid">활용</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">행동 강화용 토큰 보드를 하나의 HTML 파일로 만들어줘.
+별 10개가 빈 칸으로 보이고, '칭찬 +1' 버튼을 누르면 별이 하나씩 채워지게 해줘.
+별을 다 채우면 축하 메시지와 색종이 효과가 나오게 해줘.
+목표 개수(5·10·15·20)를 고를 수 있게 해줘.
+지금까지 모은 개수는 브라우저에 저장해서 새로고침해도 남아 있게 해줘(localStorage).
+되돌리기 버튼과 전체 초기화 버튼도 넣어줘.
+버튼과 별은 아주 크게 만들어줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai 접속 후 로그인 → 프롬프트 입력</li>
+            <li>아티팩트에서 별을 채워보고, <strong>새로고침해도 남는지</strong> 확인</li>
+            <li>다운로드 → 학생이 쓸 기기에서 다시 확인</li>
+            <li>학생마다 파일을 <strong>복사해서 이름만 바꿔</strong> 따로 쓰기</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"별 대신 좋아하는 캐릭터 이모지를 고를 수 있게 해줘"</li>
+              <li>"목표를 채우면 무슨 보상인지 미리 적어둘 수 있게 해줘"</li>
+              <li>"오늘 모은 개수와 전체 누적을 따로 보여줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- 6. 나만의 의사소통판 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F5E3;&#xFE0F;</div>
+          <div class="card-info">
+            <div class="card-title">나만의 의사소통판 만들기</div>
+            <div class="card-desc">카드를 직접 추가·수정해서 그 학생 전용으로</div>
+          </div>
+          <span class="diff-badge mid">활용</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">학생마다 다르게 꾸밀 수 있는 의사소통판을 하나의 HTML 파일로 만들어줘.
+카드는 이모지와 낱말로 이루어지고, 누르면 한국어 음성으로 읽어줘(speechSynthesis).
+교사가 카드를 직접 추가·수정·삭제할 수 있는 버튼을 넣어줘.
+만든 카드는 브라우저에 저장해서 다음에 열어도 그대로 있게 해줘(localStorage).
+카드 칸 수는 4칸·6칸·9칸 중에 고를 수 있게 해줘.
+학생이 실수로 고치지 않게 '편집 모드'를 따로 켜고 끄게 해줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai 접속 후 로그인 → 프롬프트 입력</li>
+            <li>편집 모드를 켜서 <strong>카드를 직접 몇 개 만들어보기</strong></li>
+            <li>편집 모드를 끄고, 학생이 쓰는 상태로 눌러보기</li>
+            <li>다운로드 → 학생별로 파일을 복사해 각각 다르게 꾸미기</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"만든 카드 목록을 파일로 내보내고 불러올 수 있게 해줘"</li>
+              <li>"자주 쓰는 카드가 위로 오게 정렬해줘"</li>
+              <li>"카드에 사진을 넣을 수 있게 해줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- 7. 과제분석 체크판 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x2705;</div>
+          <div class="card-info">
+            <div class="card-title">과제분석 체크판</div>
+            <div class="card-desc">손씻기 7단계처럼, 단계별 수행 정도를 그 자리에서 기록</div>
+          </div>
+          <span class="diff-badge mid">활용</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">과제분석(task analysis) 단계 체크판을 하나의 HTML 파일로 만들어줘.
+손씻기를 7단계로 나눠 그림 이모지와 짧은 문장으로 세로로 보여줘.
+각 단계마다 '혼자 함 / 도움 받음 / 못 함' 세 버튼을 크게 넣어줘.
+오늘 기록한 결과는 브라우저에 저장하고(localStorage), 아래에 날짜별 목록으로 보여줘.
+혼자 한 단계 수를 '7단계 중 5단계'처럼 크게 요약해서 보여줘.
+단계 내용은 교사가 직접 고칠 수 있게 해줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai 접속 후 로그인 → 프롬프트 입력</li>
+            <li>단계 내용을 <strong>우리 반 실제 활동</strong>으로 바꿔보기</li>
+            <li>한 번 기록해보고, 날짜별 목록에 쌓이는지 확인</li>
+            <li>다운로드 → 활동마다 파일을 복사해서 따로 쓰기</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"단계를 마음대로 추가·삭제할 수 있게 해줘"</li>
+              <li>"주차별로 혼자 한 단계 수가 어떻게 변했는지 그래프로 보여줘"</li>
+              <li>"기록을 표로 복사할 수 있는 버튼을 넣어줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- 8. 개별화 학습지 생성기 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F4DD;</div>
+          <div class="card-info">
+            <div class="card-title">개별화 학습지 생성기</div>
+            <div class="card-desc">수준·문항 수·글자 크기를 골라 만들고 바로 인쇄</div>
+          </div>
+          <span class="diff-badge mid">활용</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 이렇게 말해보세요</div>
+            <div class="prompt-text">학생 수준에 맞춘 학습지를 만들어 인쇄하는 웹페이지를 하나의 HTML 파일로 만들어줘.
+문제 종류는 한 자리 덧셈·뺄셈, 낱말 따라쓰기, 수 세기 중에 고르게 해줘.
+문항 수(10·15·20)와 글자 크기(보통·크게·아주 크게)도 고를 수 있게 해줘.
+'문제 만들기'를 누르면 무작위로 새 문제가 나오게 해줘.
+인쇄 버튼을 누르면 문제만 깔끔하게 A4로 인쇄되게 해줘(화면의 버튼은 인쇄에서 빠지게).
+정답지도 따로 볼 수 있게 해줘.</div>
+          </div>
+          <ol class="steps">
+            <li>claude.ai 접속 후 로그인 → 프롬프트 입력</li>
+            <li>문제를 만들고 <strong>인쇄 미리보기(Ctrl+P)</strong>로 A4에 잘 들어가는지 확인</li>
+            <li>글자 크기를 '아주 크게'로 바꿔 다시 인쇄 미리보기</li>
+            <li>다운로드해서 매주 새 학습지 뽑기</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"받아올림 없는 덧셈만 나오게 해줘"</li>
+              <li>"학생 이름과 날짜 칸을 위에 넣어줘"</li>
+              <li>"낱말 목록을 내가 직접 입력할 수 있게 해줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ========== 심화 ========== -->
+    <div class="diff-group diff-hard fade-in">
+      <div class="diff-group-label">심화 — 구글 시트에 쌓이는 앱 (GAS)</div>
+
+      <div class="note tip">
+        <span class="ic">&#x1F4A1;</span>
+        <div><b>심화 3가지는 만드는 방법이 달라요</b><p>여기서는 <strong>바로 코드를 받지 않습니다.</strong> 먼저 클로드와 대화하며 방향을 잡고, 그다음 코드를 받아 구글 시트에 붙여넣어 배포해요. 배포 방법이 처음이라면 <a class="link" href="#deploy" onclick="document.getElementById('deploy').scrollIntoView({behavior:'smooth'})">배포 가이드의 GAS 배포</a>를 먼저 보고 오세요.</p></div>
+      </div>
+
+      <!-- 9. 행동 관찰 기록기 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F50D;</div>
+          <div class="card-info">
+            <div class="card-title">행동 관찰 기록기 (A-B-C)</div>
+            <div class="card-desc">폰에서 몇 번 눌러 기록 → 시간대·요일 패턴이 보여요</div>
+          </div>
+          <span class="diff-badge hard">심화</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 1단계 — 방향부터 잡기</div>
+            <div class="prompt-text">특수학급 행동 관찰 기록 앱을 만들고 싶어. 바로 코드 짜지 말고 먼저 방향부터 잡아줘.
+- 목표: 문제행동이 생겼을 때 휴대폰으로 30초 안에 기록하기
+- 기능: 학생은 번호로만 고르고(실명 없음), 선행사건·행동·후속결과를 각각 버튼으로 골라 저장
+- 화면: 버튼 위주, 글자 크게, 저장하면 바로 최근 기록 확인
+- 데이터: 구글 시트에 시간과 함께 쌓이고, 시간대·요일별로 집계해서 보기
+- 스택: Google Apps Script + HTML 두 파일로</div>
+          </div>
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 2단계 — 대화가 끝나면</div>
+            <div class="prompt-text">좋아, 이제 이대로 만들어줘. Code.gs와 index.html 두 파일로 나눠서 주고,
+시트는 setupSheet() 함수를 실행하면 자동으로 만들어지게 해줘.</div>
+          </div>
+          <ol class="steps">
+            <li>1단계 프롬프트로 <strong>클로드의 질문에 답하며</strong> 방향 정하기</li>
+            <li>2단계 프롬프트로 <strong>Code.gs · index.html</strong> 받기</li>
+            <li>구글 시트 새로 만들기 → 확장 프로그램 → Apps Script → 코드 붙여넣기</li>
+            <li><strong>setupSheet()</strong> 실행 → 웹 앱으로 배포 → 링크를 폰 홈화면에 추가</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"선행사건·행동 항목을 우리 반 상황에 맞게 바꿔줘"</li>
+              <li>"기록을 기간으로 걸러서 볼 수 있게 해줘"</li>
+              <li>"주차별 발생 횟수를 막대그래프로 보여줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- 10. IEP 목표 관리판 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F4CB;</div>
+          <div class="card-info">
+            <div class="card-title">IEP 목표 관리판</div>
+            <div class="card-desc">주차별 체크가 쌓여서 학기말 평가 문구가 돼요</div>
+          </div>
+          <span class="diff-badge hard">심화</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 1단계 — 방향부터 잡기</div>
+            <div class="prompt-text">개별화교육계획(IEP) 목표 관리판을 만들고 싶어. 바로 코드 짜지 말고 먼저 방향부터 잡아줘.
+- 목표: 학생별 개별화 목표의 주차별 달성도를 한 화면에서 관리
+- 기능: 학생(번호)마다 목표를 3~5개 등록, 주차별로 달성·부분달성·미달성 체크
+- 화면: 학생을 고르면 목표가 표로 보이고, 체크는 클릭 한 번
+- 산출: 학기말에 목표별 달성 추이를 문장으로 요약해서 복사할 수 있게
+- 스택: Google Apps Script + 구글 시트 + HTML</div>
+          </div>
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 2단계 — 대화가 끝나면</div>
+            <div class="prompt-text">좋아, 이제 이대로 만들어줘. Code.gs와 index.html 두 파일로 나눠서 주고,
+시트는 setupSheet() 함수를 실행하면 자동으로 만들어지게 해줘.
+학생은 이름 대신 번호로만 관리하게 해줘.</div>
+          </div>
+          <ol class="steps">
+            <li>1단계 프롬프트로 방향 정하기 — <strong>우리 학교 IEP 양식</strong>을 설명하면 더 잘 맞아요</li>
+            <li>2단계 프롬프트로 코드 받기</li>
+            <li>구글 시트 → 확장 프로그램 → Apps Script → 붙여넣고 <strong>setupSheet()</strong> 실행</li>
+            <li>웹 앱으로 배포 → 학기 중에는 주차 체크만, 학기말에 요약 복사</li>
+          </ol>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"목표마다 평가 방법(관찰·수행·면담)을 함께 적게 해줘"</li>
+              <li>"달성률을 학생별 그래프로 보여줘"</li>
+              <li>"요약 문장을 생활기록부 문체로 다듬어줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- 11. 통합학급 협력 노트 -->
+      <details class="practice-card">
+        <summary>
+          <div class="card-icon level6-icon">&#x1F91D;</div>
+          <div class="card-info">
+            <div class="card-title">통합학급 협력 노트</div>
+            <div class="card-desc">특수·통합 교사·실무사가 같은 학생 메모를 이어서 써요</div>
+          </div>
+          <span class="diff-badge hard">심화</span>
+          <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="card-body">
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 1단계 — 방향부터 잡기</div>
+            <div class="prompt-text">특수교사·통합학급 교사·실무사가 함께 쓰는 학생 지원 노트를 만들고 싶어. 바로 코드 짜지 말고 방향부터 잡아줘.
+- 목표: 한 학생에 대한 지원 메모를 여러 사람이 이어서 기록
+- 기능: 학생(번호) 선택 → 날짜·작성자 역할·상황·대응 방법을 짧게 입력, 최근 기록부터 보기
+- 표시: 작성자는 이름 대신 역할(특수/통합/실무사)로만
+- 화면: 휴대폰에서 쓰기 편하게, 입력은 세 줄 이내로 끝나게
+- 스택: Google Apps Script + 구글 시트 + HTML</div>
+          </div>
+          <div class="prompt-block level6-prompt">
+            <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+            <div class="prompt-label">&#x1F4AC; 2단계 — 대화가 끝나면</div>
+            <div class="prompt-text">좋아, 이제 이대로 만들어줘. Code.gs와 index.html 두 파일로 나눠서 주고,
+시트는 setupSheet() 함수를 실행하면 자동으로 만들어지게 해줘.
+학생은 번호로만, 작성자는 역할로만 표시하게 해줘.</div>
+          </div>
+          <ol class="steps">
+            <li>1단계 프롬프트로 방향 정하기</li>
+            <li>2단계 프롬프트로 코드 받기</li>
+            <li>구글 시트 → Apps Script에 붙여넣고 <strong>setupSheet()</strong> 실행</li>
+            <li>웹 앱 배포 → <strong>링크를 함께 쓰는 선생님들께만</strong> 공유</li>
+          </ol>
+          <div class="note warn" style="margin-top:14px">
+            <span class="ic">&#x1F510;</span>
+            <div><b>공유 범위를 꼭 확인하세요</b><p>여러 사람이 쓰는 앱일수록 <strong>링크가 새어 나가면 위험</strong>합니다. 배포할 때 접근 권한을 '학교 계정 사용자'로 제한하고, 시트 자체의 공유 설정도 함께 점검하세요. 학생 실명은 넣지 않습니다.</p></div>
+          </div>
+          <div class="customize-box">
+            <h4>커스터마이징 챌린지</h4>
+            <ul>
+              <li>"자주 쓰는 대응 방법을 버튼으로 골라 넣게 해줘"</li>
+              <li>"학생별로 최근 한 달 기록만 보여줘"</li>
+              <li>"새 기록이 올라오면 표시가 뜨게 해줘"</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ========== 설계 원칙 ========== -->
+    <div class="section-header fade-in" style="margin-top:52px">
+      <div class="section-label en" style="color:var(--level6);">Design Rules</div>
+      <h2>만들기 전에, 이것만은</h2>
+      <p>쓰는 사람이 학생이라면 화면 설계의 기준이 달라집니다</p>
+    </div>
+
+    <div class="start-grid fade-in">
+      <div class="start-card">
+        <div class="start-num">1</div>
+        <div class="start-content">
+          <h3>한 화면에 한 과제</h3>
+          <ol class="steps">
+            <li>버튼은 <strong>손가락 하나로 누를 만큼</strong> 크게</li>
+            <li>한 화면의 선택지는 <strong>4~6개</strong>를 넘기지 않기</li>
+            <li>설명 문장은 짧게, 낱말과 그림을 함께</li>
+          </ol>
+          <div class="start-tip">프롬프트에 <strong>"버튼과 글자를 아주 크게"</strong> 한 줄만 넣어도 결과가 확 달라져요.</div>
+        </div>
+      </div>
+
+      <div class="start-card">
+        <div class="start-num">2</div>
+        <div class="start-content">
+          <h3>보고, 듣게</h3>
+          <ol class="steps">
+            <li>중요한 건 <strong>그림·색·소리</strong>로 함께 알리기</li>
+            <li>음성 읽기는 <strong>speechSynthesis</strong> 한 줄이면 붙어요</li>
+            <li>눌렀다는 걸 색이나 크기 변화로 바로 보여주기</li>
+          </ol>
+          <div class="start-tip">프롬프트에 <strong>"누르면 한국어 음성으로 읽어줘(speechSynthesis)"</strong> 라고 적으면 됩니다.</div>
+        </div>
+      </div>
+
+      <div class="start-card">
+        <div class="start-num">3</div>
+        <div class="start-content">
+          <h3>이름 대신 번호</h3>
+          <ol class="steps">
+            <li>학생은 <strong>번호·이니셜</strong>로만 구분하기</li>
+            <li>행동·관찰 기록일수록 더 엄격하게</li>
+            <li>클로드에게 줄 프롬프트에도 실제 정보 넣지 않기</li>
+          </ol>
+          <div class="start-tip">기능은 그대로인데 위험만 사라집니다. 처음 만들 때부터 이렇게 설계하세요.</div>
+        </div>
+      </div>
+
+      <div class="start-card">
+        <div class="start-num">4</div>
+        <div class="start-content">
+          <h3>혼자 말고, 같이</h3>
+          <ol class="steps">
+            <li>누가 볼지 먼저 정하기 — 교사만? 실무사도? 학부모도?</li>
+            <li>보기만 할 사람과 <strong>쓸 사람을 나누기</strong></li>
+            <li>배포할 때 접근 권한을 <strong>학교 계정</strong>으로 제한</li>
+          </ol>
+          <div class="start-tip">통합학급 교사와 실무사가 함께 보면, 같은 학생을 보는 눈이 맞춰집니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note tip" style="margin-top:26px">
+      <span class="ic">&#x1F4C2;</span>
+      <div><b>학생마다 다른 화면, 이렇게 만드세요</b><p>처음부터 "여러 학생을 관리하는 앱"으로 만들면 복잡해집니다. <strong>한 명용으로 하나 잘 만든 뒤, 파일을 복사해서 이름·카드·목표만 바꾸는 방법</strong>이 훨씬 빠르고 안전해요. <code>민준이_일과표.html</code>, <code>서연이_일과표.html</code> 처럼요. 나중에 정말 필요해지면 그때 시트(GAS)로 합치면 됩니다.</p></div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ====== 디자인 팁 ====== -->
 <section class="section" id="design">
